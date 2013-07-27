@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
 @interface ScarletAppDelegate : NSObject <NSApplicationDelegate>
 
@@ -16,6 +17,12 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (weak) IBOutlet NSTabView *contentTabView;
+@property (weak) IBOutlet NSArrayController *entriesArrayController;
+@property (weak) IBOutlet WebView *styledWebView;
+@property (weak) IBOutlet NSSplitView *splitView;
+
 - (IBAction)saveAction:(id)sender;
+- (IBAction)changeContentTabView:(id)sender;
 
 @end

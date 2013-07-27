@@ -7,6 +7,8 @@
 //
 
 #import "ScarletAppDelegate.h"
+#import "libMultiMarkdown.h"
+#import "Entry.h"
 
 @implementation ScarletAppDelegate
 
@@ -83,7 +85,9 @@
     
     NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"Scarlet.storedata"];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
+
+    NSDictionary *optionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+    if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:optionDictionary error:&error]) {
         [[NSApplication sharedApplication] presentError:error];
         return nil;
     }
@@ -134,6 +138,82 @@
     }
 }
 
+#pragma mark -
+
+- (void)loadHTMLWithStyle:(NSString *)html{
+    NSString *style = @"<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />";
+    NSString *newHTML = [NSString stringWithFormat:@"%@%@", style, html];
+    [[self.styledWebView mainFrame] loadHTMLString:newHTML baseURL:[self applicationFilesDirectory]];
+}
+#pragma mark My methods
+
+- (IBAction)changeContentTabView:(id)sender {
+    if ([[sender identifier] isEqualToString:@"styledViewButton"]) {
+        [self.contentTabView selectTabViewItemWithIdentifier:@"editor"];
+    }
+    else if ([[sender identifier] isEqualToString:@"contentViewButton"]){
+        [self.contentTabView selectTabViewItemWithIdentifier:@"styled"];
+        
+        // Convert HTML to Markdown
+        NSArray *selected = [self.entriesArrayController selectedObjects];
+        if (selected && [selected count] == 1) {
+            Entry *selectedEntry = [selected objectAtIndex:0];
+            if ([selectedEntry content]) {
+                NSString *html = [NSString stringWithUTF8String:markdown_to_string((char *)[[selectedEntry content] UTF8String],EXT_NOTES,0)];
+                [selectedEntry setValue:html forKey:@"html"];
+                //[[self.styledWebView mainFrame] loadHTMLString:html baseURL:[NSURL URLWithString:@"/"]];
+                [self loadHTMLWithStyle:html];
+            }
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark TableViewDelegate
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
+    NSArray *selected = [self.entriesArrayController selectedObjects];
+    if (selected && [selected count] == 1) {
+        Entry *selectedEntry = [selected objectAtIndex:0];
+        if ([selectedEntry content]) {
+            //[[self.styledWebView mainFrame] loadHTMLString:[selectedEntry html] baseURL:[NSURL URLWithString:@"/"]];
+            [self loadHTMLWithStyle:[selectedEntry html]];
+        }else{
+            //[[self.styledWebView mainFrame] loadHTMLString:@"" baseURL:[NSURL URLWithString:@"/"]];
+            [self loadHTMLWithStyle:@""];
+        }
+    }else{
+//        [[self.styledWebView mainFrame] loadHTMLString:@"" baseURL:[NSURL URLWithString:@"/"]];
+        [self loadHTMLWithStyle:@""];
+    }
+}
+
+#pragma  mark SplitViewDelegate
+
+- (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview{
+    if ([[subview identifier] isEqualToString:@"sourceView"]) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+- (BOOL)splitView:(NSSplitView *)splitView shouldCollapseSubview:(NSView *)subview forDoubleClickOnDividerAtIndex:(NSInteger)dividerIndex{
+    return YES;
+}
+
+// Will Fix in 10.9
+//- (BOOL)splitView:(NSSplitView *)splitView shouldAdjustSizeOfSubview:(NSView *)subview{
+//    NSLog(@"%@", [subview identifier]);
+//    if ([[subview identifier] isEqualToString:@"contentView"]) {
+//        return YES;
+//    }else{
+//        return NO;
+//    }
+//}
+
+#pragma mark -
+
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
@@ -179,5 +259,6 @@
 
     return NSTerminateNow;
 }
+
 
 @end
