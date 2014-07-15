@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B6257AAB19629136007DDD98 /* HTMLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6257AAA19629136007DDD98 /* HTMLTransformer.m */; };
-		B62DA77C196E97B000B0CB75 /* EntryTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B62DA77B196E97B000B0CB75 /* EntryTableCellView.m */; };
 		B62DA782196F65AE00B0CB75 /* HoverTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B62DA781196F65AE00B0CB75 /* HoverTableRowView.m */; };
 		B642FAC9179E912C00B7F537 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B642FAC8179E912C00B7F537 /* Cocoa.framework */; };
 		B642FAD3179E912C00B7F537 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B642FAD1179E912C00B7F537 /* InfoPlist.strings */; };
@@ -17,14 +16,12 @@
 		B642FADC179E912C00B7F537 /* ScarletAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B642FADB179E912C00B7F537 /* ScarletAppDelegate.m */; };
 		B642FADF179E912D00B7F537 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B642FADD179E912D00B7F537 /* MainMenu.xib */; };
 		B642FAE2179E912D00B7F537 /* Scarlet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B642FAE0179E912D00B7F537 /* Scarlet.xcdatamodeld */; };
-		B642FAEB179FC65200B7F537 /* EntryArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = B642FAEA179FC65200B7F537 /* EntryArrayController.m */; };
 		B642FAF1179FF96400B7F537 /* libMultiMarkdown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B642FAF0179FF96400B7F537 /* libMultiMarkdown.a */; };
 		B642FB0517A265C700B7F537 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B642FB0417A265C700B7F537 /* WebKit.framework */; };
 		B655D6DB196FBDD80023E422 /* IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6DA196FBDD80023E422 /* IsEmpty.m */; };
 		B655D6E51972422E0023E422 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6E41972422E0023E422 /* Tag.m */; };
 		B655D6E8197268370023E422 /* SetToString.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6E7197268370023E422 /* SetToString.m */; };
 		B655D6EB19728C5F0023E422 /* DetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6EA19728C5F0023E422 /* DetailInfoView.m */; };
-		B655D6EE1973BCF40023E422 /* IsTagged.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6ED1973BCF40023E422 /* IsTagged.m */; };
 		B655D6F11974126E0023E422 /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6F01974126E0023E422 /* TagCellView.m */; };
 		B655D6F4197414550023E422 /* TagTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6F3197414550023E422 /* TagTableViewController.m */; };
 		B674B8941963D1FB001D2149 /* VerticalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B674B8921963D1FB001D2149 /* VerticalListViewController.m */; };
@@ -37,15 +34,11 @@
 		B69CD6701964405C0028F4DC /* VerticalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD66F1964405C0028F4DC /* VerticalListView.xib */; };
 		B69CD672196440DD0028F4DC /* ExpandedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD671196440DD0028F4DC /* ExpandedView.xib */; };
 		B69CD675196441120028F4DC /* ExpandedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69CD674196441120028F4DC /* ExpandedViewController.m */; };
-		B6C046E717CB748400AF0336 /* ContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C046E617CB748400AF0336 /* ContentController.m */; };
-		B6C046EC17CDD1E200AF0336 /* StyledHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C046EB17CDD1E200AF0336 /* StyledHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B6257AA919629136007DDD98 /* HTMLTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLTransformer.h; sourceTree = "<group>"; };
 		B6257AAA19629136007DDD98 /* HTMLTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLTransformer.m; sourceTree = "<group>"; };
-		B62DA77A196E97B000B0CB75 /* EntryTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryTableCellView.h; sourceTree = "<group>"; };
-		B62DA77B196E97B000B0CB75 /* EntryTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryTableCellView.m; sourceTree = "<group>"; };
 		B62DA780196F65AE00B0CB75 /* HoverTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoverTableRowView.h; sourceTree = "<group>"; };
 		B62DA781196F65AE00B0CB75 /* HoverTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverTableRowView.m; sourceTree = "<group>"; };
 		B642FAC5179E912C00B7F537 /* Scarlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scarlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,8 +56,6 @@
 		B642FADE179E912D00B7F537 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B642FAE1179E912D00B7F537 /* Scarlet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scarlet.xcdatamodel; sourceTree = "<group>"; };
 		B642FAE8179FB9C600B7F537 /* Scarlet 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scarlet 2.xcdatamodel"; sourceTree = "<group>"; };
-		B642FAE9179FC65200B7F537 /* EntryArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryArrayController.h; sourceTree = "<group>"; };
-		B642FAEA179FC65200B7F537 /* EntryArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryArrayController.m; sourceTree = "<group>"; };
 		B642FAF0179FF96400B7F537 /* libMultiMarkdown.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMultiMarkdown.a; path = ../libMultiMarkdown.a; sourceTree = "<group>"; };
 		B642FAF5179FFA0800B7F537 /* libMultiMarkdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libMultiMarkdown.h; path = ../usr/local/include/libMultiMarkdown.h; sourceTree = "<group>"; };
 		B642FB0417A265C700B7F537 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -76,8 +67,6 @@
 		B655D6E7197268370023E422 /* SetToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetToString.m; sourceTree = "<group>"; };
 		B655D6E919728C5F0023E422 /* DetailInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailInfoView.h; sourceTree = "<group>"; };
 		B655D6EA19728C5F0023E422 /* DetailInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInfoView.m; sourceTree = "<group>"; };
-		B655D6EC1973BCF40023E422 /* IsTagged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsTagged.h; sourceTree = "<group>"; };
-		B655D6ED1973BCF40023E422 /* IsTagged.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsTagged.m; sourceTree = "<group>"; };
 		B655D6EF1974126E0023E422 /* TagCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagCellView.h; sourceTree = "<group>"; };
 		B655D6F01974126E0023E422 /* TagCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagCellView.m; sourceTree = "<group>"; };
 		B655D6F2197414550023E422 /* TagTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableViewController.h; sourceTree = "<group>"; };
@@ -100,10 +89,6 @@
 		B69CD671196440DD0028F4DC /* ExpandedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandedView.xib; sourceTree = "<group>"; };
 		B69CD673196441120028F4DC /* ExpandedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandedViewController.h; sourceTree = "<group>"; };
 		B69CD674196441120028F4DC /* ExpandedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandedViewController.m; sourceTree = "<group>"; };
-		B6C046E517CB748400AF0336 /* ContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentController.h; sourceTree = "<group>"; };
-		B6C046E617CB748400AF0336 /* ContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentController.m; sourceTree = "<group>"; };
-		B6C046EA17CDD1E200AF0336 /* StyledHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyledHeaderView.h; sourceTree = "<group>"; };
-		B6C046EB17CDD1E200AF0336 /* StyledHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyledHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +122,6 @@
 		B62DA77D196EBC6200B0CB75 /* need not */ = {
 			isa = PBXGroup;
 			children = (
-				B642FAE9179FC65200B7F537 /* EntryArrayController.h */,
-				B642FAEA179FC65200B7F537 /* EntryArrayController.m */,
 				B68627A817B37A61008A5D3C /* TableController.h */,
 				B68627A917B37A61008A5D3C /* TableController.m */,
 			);
@@ -191,7 +174,6 @@
 				B642FADB179E912C00B7F537 /* ScarletAppDelegate.m */,
 				B62DA770196A8FE300B0CB75 /* Vertical List View */,
 				B674B8961963D20D001D2149 /* Expanded View (No Future) */,
-				B6C046E817CB748C00AF0336 /* Content View */,
 				B655D6DC196FBDE30023E422 /* Transformers */,
 				B6C046E417CB702A00AF0336 /* Entities */,
 				B62DA77D196EBC6200B0CB75 /* need not */,
@@ -232,8 +214,6 @@
 				B655D6DA196FBDD80023E422 /* IsEmpty.m */,
 				B655D6E6197268370023E422 /* SetToString.h */,
 				B655D6E7197268370023E422 /* SetToString.m */,
-				B655D6EC1973BCF40023E422 /* IsTagged.h */,
-				B655D6ED1973BCF40023E422 /* IsTagged.m */,
 			);
 			name = Transformers;
 			sourceTree = "<group>";
@@ -276,8 +256,6 @@
 			children = (
 				B62DA780196F65AE00B0CB75 /* HoverTableRowView.h */,
 				B62DA781196F65AE00B0CB75 /* HoverTableRowView.m */,
-				B62DA77A196E97B000B0CB75 /* EntryTableCellView.h */,
-				B62DA77B196E97B000B0CB75 /* EntryTableCellView.m */,
 			);
 			name = Table;
 			sourceTree = "<group>";
@@ -294,17 +272,6 @@
 				B642FAE0179E912D00B7F537 /* Scarlet.xcdatamodeld */,
 			);
 			name = Entities;
-			sourceTree = "<group>";
-		};
-		B6C046E817CB748C00AF0336 /* Content View */ = {
-			isa = PBXGroup;
-			children = (
-				B6C046E517CB748400AF0336 /* ContentController.h */,
-				B6C046E617CB748400AF0336 /* ContentController.m */,
-				B6C046EA17CDD1E200AF0336 /* StyledHeaderView.h */,
-				B6C046EB17CDD1E200AF0336 /* StyledHeaderView.m */,
-			);
-			name = "Content View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,15 +345,12 @@
 				B642FAD5179E912C00B7F537 /* main.m in Sources */,
 				B642FADC179E912C00B7F537 /* ScarletAppDelegate.m in Sources */,
 				B642FAE2179E912D00B7F537 /* Scarlet.xcdatamodeld in Sources */,
-				B655D6EE1973BCF40023E422 /* IsTagged.m in Sources */,
 				B68A7B2C19744EAF00047460 /* HoverTagTableRowView.m in Sources */,
-				B642FAEB179FC65200B7F537 /* EntryArrayController.m in Sources */,
 				B674B8941963D1FB001D2149 /* VerticalListViewController.m in Sources */,
 				B69CD675196441120028F4DC /* ExpandedViewController.m in Sources */,
 				B68A7B371974BA5800047460 /* TagTableView.m in Sources */,
 				B655D6DB196FBDD80023E422 /* IsEmpty.m in Sources */,
 				B655D6F4197414550023E422 /* TagTableViewController.m in Sources */,
-				B62DA77C196E97B000B0CB75 /* EntryTableCellView.m in Sources */,
 				B62DA782196F65AE00B0CB75 /* HoverTableRowView.m in Sources */,
 				B686279517A3C2D3008A5D3C /* Box.m in Sources */,
 				B655D6F11974126E0023E422 /* TagCellView.m in Sources */,
@@ -394,9 +358,7 @@
 				B68627AA17B37A61008A5D3C /* TableController.m in Sources */,
 				B655D6E51972422E0023E422 /* Tag.m in Sources */,
 				B655D6E8197268370023E422 /* SetToString.m in Sources */,
-				B6C046E717CB748400AF0336 /* ContentController.m in Sources */,
 				B655D6EB19728C5F0023E422 /* DetailInfoView.m in Sources */,
-				B6C046EC17CDD1E200AF0336 /* StyledHeaderView.m in Sources */,
 				B6257AAB19629136007DDD98 /* HTMLTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

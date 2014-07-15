@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-@class ContentController;
-@class EntryTableCellView;
+//@class ContentController;
+//@class EntryTableCellView;
 
 @interface TableController : NSObject
 

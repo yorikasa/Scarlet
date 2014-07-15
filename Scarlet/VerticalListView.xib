@@ -66,7 +66,7 @@
                                                         </textFieldCell>
                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         <prototypeCellViews>
-                                                            <tableCellView id="dIR-sp-dWg" customClass="EntryTableCellView">
+                                                            <tableCellView id="dIR-sp-dWg">
                                                                 <rect key="frame" x="1" y="1" width="365" height="60"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
@@ -425,56 +425,27 @@
             </connections>
         </arrayController>
         <customView id="vwS-Xb-N2X" userLabel="Create Box Popover">
-            <rect key="frame" x="0.0" y="0.0" width="255" height="90"/>
+            <rect key="frame" x="0.0" y="0.0" width="256" height="42"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mk8-ht-ZGg">
-                    <rect key="frame" x="78" y="3" width="82" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NWX-JT-nv7">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                    </buttonCell>
-                    <connections>
-                        <action selector="performClose:" target="QU8-jQ-91w" id="eea-Jo-VS2"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d89-ML-Pc1">
-                    <rect key="frame" x="160" y="3" width="81" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Pea-qB-gO6">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                    </buttonCell>
-                    <connections>
-                        <action selector="addBox:" target="-2" id="0VA-0d-ghm"/>
-                    </connections>
-                </button>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e9R-H9-pMG">
-                    <rect key="frame" x="20" y="48" width="215" height="22"/>
+                    <rect key="frame" x="10" y="10" width="236" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Name of new box" drawsBackground="YES" id="ad7-Kb-gry">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" state="on" borderStyle="bezel" placeholderString="Name of new box" drawsBackground="YES" id="ad7-Kb-gry">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="addBox:" target="-2" id="gKH-Vn-tV2"/>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="d89-ML-Pc1" secondAttribute="trailing" constant="20" id="5pM-jy-nrZ"/>
-                <constraint firstAttribute="trailing" secondItem="e9R-H9-pMG" secondAttribute="trailing" constant="20" id="64g-7a-M8U"/>
-                <constraint firstAttribute="bottom" secondItem="Mk8-ht-ZGg" secondAttribute="bottom" constant="10" id="NZS-EQ-Gf7"/>
-                <constraint firstItem="d89-ML-Pc1" firstAttribute="leading" secondItem="Mk8-ht-ZGg" secondAttribute="trailing" constant="12" id="NjA-yQ-MD2"/>
-                <constraint firstItem="e9R-H9-pMG" firstAttribute="top" secondItem="vwS-Xb-N2X" secondAttribute="top" constant="20" id="WMs-LN-13X"/>
-                <constraint firstItem="d89-ML-Pc1" firstAttribute="leading" secondItem="Mk8-ht-ZGg" secondAttribute="trailing" constant="12" id="cah-rn-YVe"/>
-                <constraint firstAttribute="bottom" secondItem="d89-ML-Pc1" secondAttribute="bottom" constant="10" id="jAH-eW-s5E"/>
-                <constraint firstItem="e9R-H9-pMG" firstAttribute="leading" secondItem="vwS-Xb-N2X" secondAttribute="leading" constant="20" id="pDq-wG-DWq"/>
+                <constraint firstItem="e9R-H9-pMG" firstAttribute="leading" secondItem="vwS-Xb-N2X" secondAttribute="leading" constant="10" id="AcH-VF-Vud"/>
+                <constraint firstItem="e9R-H9-pMG" firstAttribute="top" secondItem="vwS-Xb-N2X" secondAttribute="top" constant="10" id="TAD-UT-w1O"/>
+                <constraint firstAttribute="trailing" secondItem="e9R-H9-pMG" secondAttribute="trailing" constant="10" id="f6i-Kw-xOH"/>
+                <constraint firstAttribute="bottom" secondItem="e9R-H9-pMG" secondAttribute="bottom" constant="10" id="xHk-Yt-6Z7"/>
             </constraints>
         </customView>
         <arrayController mode="entity" entityName="Tag" automaticallyPreparesContent="YES" id="9J3-E3-0Ou" userLabel="Tags">

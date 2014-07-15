@@ -8,7 +8,6 @@
 
 #import "VerticalListViewController.h"
 #import "ScarletAppDelegate.h"
-#import "EntryTableCellView.h"
 #import "Entry.h"
 #import "Box.h"
 #import "Tag.h"
@@ -121,29 +120,31 @@ int gIsEditing = 0;
 }
 
 - (IBAction)addBox:(id)sender{
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:[self managedObjectContext]];
-    [request setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name LIKE %@", [_boxNameTextField stringValue]];
-    [request setPredicate:predicate];
-    NSError *error;
-    NSArray *array = [[self managedObjectContext] executeFetchRequest:request error:&error];
-    if (array != nil) {
-        if ([array count] == 0) {
-            Box *newBox = [_boxArrayController newObject];
-            [newBox setName:[_boxNameTextField stringValue]];
-            [_boxArrayController addObject:newBox];
-            [_boxPopUpButton selectItemWithTitle:[_boxNameTextField stringValue]];
-            for (Entry *entry in _entryArrayController.selectedObjects) {
-                entry.box = newBox;
+    if (![[sender stringValue] isEqualToString:@""]){
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:[self managedObjectContext]];
+        [request setEntity:entity];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name LIKE %@", [_boxNameTextField stringValue]];
+        [request setPredicate:predicate];
+        NSError *error;
+        NSArray *array = [[self managedObjectContext] executeFetchRequest:request error:&error];
+        if (array != nil) {
+            if ([array count] == 0) {
+                Box *newBox = [_boxArrayController newObject];
+                [newBox setName:[_boxNameTextField stringValue]];
+                [_boxArrayController addObject:newBox];
+                [_boxPopUpButton selectItemWithTitle:[_boxNameTextField stringValue]];
+                for (Entry *entry in _entryArrayController.selectedObjects) {
+                    entry.box = newBox;
+                }
             }
         }
+        else{
+            // error handling
+        }
+        [_createBoxPopOver close];
+        [_boxNameTextField setStringValue:@""];
     }
-    else{
-        // error handling
-    }
-    [_createBoxPopOver close];
-    [_boxNameTextField setStringValue:@""];
 }
 
 - (void)appendCustomBoxMenuItems{

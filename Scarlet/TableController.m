@@ -8,9 +8,9 @@
 
 #import "ScarletAppDelegate.h"
 #import "TableController.h"
-#import "ContentController.h"
+//#import "ContentController.h"
 #import "Entry.h"
-#import "EntryTableCellView.h"
+//#import "EntryTableCellView.h"
 
 @implementation TableController
 

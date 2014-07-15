@@ -11,7 +11,6 @@
 #import "VerticalListViewController.h"
 #import "Entry.h"
 #import "Box.h"
-#import "EntryArrayController.h"
 #import "TagTableViewController.h"
 
 @implementation ScarletAppDelegate
