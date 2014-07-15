@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6257AAB19629136007DDD98 /* HTMLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6257AAA19629136007DDD98 /* HTMLTransformer.m */; };
+		B62DA77C196E97B000B0CB75 /* EntryTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B62DA77B196E97B000B0CB75 /* EntryTableCellView.m */; };
+		B62DA782196F65AE00B0CB75 /* HoverTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B62DA781196F65AE00B0CB75 /* HoverTableRowView.m */; };
 		B642FAC9179E912C00B7F537 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B642FAC8179E912C00B7F537 /* Cocoa.framework */; };
 		B642FAD3179E912C00B7F537 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B642FAD1179E912C00B7F537 /* InfoPlist.strings */; };
 		B642FAD5179E912C00B7F537 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B642FAD4179E912C00B7F537 /* main.m */; };
@@ -16,11 +19,36 @@
 		B642FAE2179E912D00B7F537 /* Scarlet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B642FAE0179E912D00B7F537 /* Scarlet.xcdatamodeld */; };
 		B642FAEB179FC65200B7F537 /* EntryArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = B642FAEA179FC65200B7F537 /* EntryArrayController.m */; };
 		B642FAF1179FF96400B7F537 /* libMultiMarkdown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B642FAF0179FF96400B7F537 /* libMultiMarkdown.a */; };
-		B642FB0317A150A200B7F537 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B642FB0217A150A200B7F537 /* Entry.m */; };
 		B642FB0517A265C700B7F537 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B642FB0417A265C700B7F537 /* WebKit.framework */; };
+		B655D6DB196FBDD80023E422 /* IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6DA196FBDD80023E422 /* IsEmpty.m */; };
+		B655D6E51972422E0023E422 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6E41972422E0023E422 /* Tag.m */; };
+		B655D6E8197268370023E422 /* SetToString.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6E7197268370023E422 /* SetToString.m */; };
+		B655D6EB19728C5F0023E422 /* DetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6EA19728C5F0023E422 /* DetailInfoView.m */; };
+		B655D6EE1973BCF40023E422 /* IsTagged.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6ED1973BCF40023E422 /* IsTagged.m */; };
+		B655D6F11974126E0023E422 /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6F01974126E0023E422 /* TagCellView.m */; };
+		B655D6F4197414550023E422 /* TagTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6F3197414550023E422 /* TagTableViewController.m */; };
+		B674B8941963D1FB001D2149 /* VerticalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B674B8921963D1FB001D2149 /* VerticalListViewController.m */; };
+		B686279517A3C2D3008A5D3C /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = B686279417A3C2D3008A5D3C /* Box.m */; };
+		B686279817A3D4D1008A5D3C /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B686279717A3D4D1008A5D3C /* Entry.m */; };
+		B68627AA17B37A61008A5D3C /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68627A917B37A61008A5D3C /* TableController.m */; };
+		B68A7B2C19744EAF00047460 /* HoverTagTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68A7B2B19744EAF00047460 /* HoverTagTableRowView.m */; };
+		B68A7B321974B3F000047460 /* icon_34677_15.png in Resources */ = {isa = PBXBuildFile; fileRef = B68A7B311974B3F000047460 /* icon_34677_15.png */; };
+		B68A7B341974B65C00047460 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = B68A7B331974B65C00047460 /* check.png */; };
+		B68A7B371974BA5800047460 /* TagTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68A7B361974BA5800047460 /* TagTableView.m */; };
+		B69CD6701964405C0028F4DC /* VerticalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD66F1964405C0028F4DC /* VerticalListView.xib */; };
+		B69CD672196440DD0028F4DC /* ExpandedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD671196440DD0028F4DC /* ExpandedView.xib */; };
+		B69CD675196441120028F4DC /* ExpandedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69CD674196441120028F4DC /* ExpandedViewController.m */; };
+		B6C046E717CB748400AF0336 /* ContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C046E617CB748400AF0336 /* ContentController.m */; };
+		B6C046EC17CDD1E200AF0336 /* StyledHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C046EB17CDD1E200AF0336 /* StyledHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6257AA919629136007DDD98 /* HTMLTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLTransformer.h; sourceTree = "<group>"; };
+		B6257AAA19629136007DDD98 /* HTMLTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLTransformer.m; sourceTree = "<group>"; };
+		B62DA77A196E97B000B0CB75 /* EntryTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryTableCellView.h; sourceTree = "<group>"; };
+		B62DA77B196E97B000B0CB75 /* EntryTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryTableCellView.m; sourceTree = "<group>"; };
+		B62DA780196F65AE00B0CB75 /* HoverTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoverTableRowView.h; sourceTree = "<group>"; };
+		B62DA781196F65AE00B0CB75 /* HoverTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverTableRowView.m; sourceTree = "<group>"; };
 		B642FAC5179E912C00B7F537 /* Scarlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scarlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B642FAC8179E912C00B7F537 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B642FACB179E912C00B7F537 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -35,14 +63,49 @@
 		B642FADB179E912C00B7F537 /* ScarletAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScarletAppDelegate.m; sourceTree = "<group>"; };
 		B642FADE179E912D00B7F537 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B642FAE1179E912D00B7F537 /* Scarlet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scarlet.xcdatamodel; sourceTree = "<group>"; };
-		B642FAE8179FB9C600B7F537 /* Scarlet 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Scarlet 2.xcdatamodel"; sourceTree = "<group>"; };
+		B642FAE8179FB9C600B7F537 /* Scarlet 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scarlet 2.xcdatamodel"; sourceTree = "<group>"; };
 		B642FAE9179FC65200B7F537 /* EntryArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryArrayController.h; sourceTree = "<group>"; };
 		B642FAEA179FC65200B7F537 /* EntryArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryArrayController.m; sourceTree = "<group>"; };
 		B642FAF0179FF96400B7F537 /* libMultiMarkdown.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMultiMarkdown.a; path = ../libMultiMarkdown.a; sourceTree = "<group>"; };
 		B642FAF5179FFA0800B7F537 /* libMultiMarkdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libMultiMarkdown.h; path = ../usr/local/include/libMultiMarkdown.h; sourceTree = "<group>"; };
-		B642FB0117A150A200B7F537 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
-		B642FB0217A150A200B7F537 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		B642FB0417A265C700B7F537 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B655D6D9196FBDD80023E422 /* IsEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsEmpty.h; sourceTree = "<group>"; };
+		B655D6DA196FBDD80023E422 /* IsEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsEmpty.m; sourceTree = "<group>"; };
+		B655D6E31972422E0023E422 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		B655D6E41972422E0023E422 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		B655D6E6197268370023E422 /* SetToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetToString.h; sourceTree = "<group>"; };
+		B655D6E7197268370023E422 /* SetToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetToString.m; sourceTree = "<group>"; };
+		B655D6E919728C5F0023E422 /* DetailInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailInfoView.h; sourceTree = "<group>"; };
+		B655D6EA19728C5F0023E422 /* DetailInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInfoView.m; sourceTree = "<group>"; };
+		B655D6EC1973BCF40023E422 /* IsTagged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsTagged.h; sourceTree = "<group>"; };
+		B655D6ED1973BCF40023E422 /* IsTagged.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsTagged.m; sourceTree = "<group>"; };
+		B655D6EF1974126E0023E422 /* TagCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagCellView.h; sourceTree = "<group>"; };
+		B655D6F01974126E0023E422 /* TagCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagCellView.m; sourceTree = "<group>"; };
+		B655D6F2197414550023E422 /* TagTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableViewController.h; sourceTree = "<group>"; };
+		B655D6F3197414550023E422 /* TagTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableViewController.m; sourceTree = "<group>"; };
+		B674B8911963D1FB001D2149 /* VerticalListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalListViewController.h; sourceTree = "<group>"; };
+		B674B8921963D1FB001D2149 /* VerticalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalListViewController.m; sourceTree = "<group>"; };
+		B686279217A3C1D5008A5D3C /* Scarlet 3.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "Scarlet 3.xcdatamodel"; sourceTree = "<group>"; };
+		B686279317A3C2D3008A5D3C /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		B686279417A3C2D3008A5D3C /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
+		B686279617A3D4D1008A5D3C /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		B686279717A3D4D1008A5D3C /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		B68627A817B37A61008A5D3C /* TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableController.h; sourceTree = "<group>"; };
+		B68627A917B37A61008A5D3C /* TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableController.m; sourceTree = "<group>"; };
+		B68A7B2A19744EAF00047460 /* HoverTagTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoverTagTableRowView.h; sourceTree = "<group>"; };
+		B68A7B2B19744EAF00047460 /* HoverTagTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverTagTableRowView.m; sourceTree = "<group>"; };
+		B68A7B311974B3F000047460 /* icon_34677_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_34677_15.png; path = images/icon_34677_15.png; sourceTree = SOURCE_ROOT; };
+		B68A7B331974B65C00047460 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = images/check.png; sourceTree = SOURCE_ROOT; };
+		B68A7B351974BA5800047460 /* TagTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableView.h; sourceTree = "<group>"; };
+		B68A7B361974BA5800047460 /* TagTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableView.m; sourceTree = "<group>"; };
+		B69CD66F1964405C0028F4DC /* VerticalListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerticalListView.xib; sourceTree = "<group>"; };
+		B69CD671196440DD0028F4DC /* ExpandedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandedView.xib; sourceTree = "<group>"; };
+		B69CD673196441120028F4DC /* ExpandedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandedViewController.h; sourceTree = "<group>"; };
+		B69CD674196441120028F4DC /* ExpandedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandedViewController.m; sourceTree = "<group>"; };
+		B6C046E517CB748400AF0336 /* ContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentController.h; sourceTree = "<group>"; };
+		B6C046E617CB748400AF0336 /* ContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentController.m; sourceTree = "<group>"; };
+		B6C046EA17CDD1E200AF0336 /* StyledHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyledHeaderView.h; sourceTree = "<group>"; };
+		B6C046EB17CDD1E200AF0336 /* StyledHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyledHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +122,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B62DA770196A8FE300B0CB75 /* Vertical List View */ = {
+			isa = PBXGroup;
+			children = (
+				B69CD66F1964405C0028F4DC /* VerticalListView.xib */,
+				B674B8911963D1FB001D2149 /* VerticalListViewController.h */,
+				B674B8921963D1FB001D2149 /* VerticalListViewController.m */,
+				B655D6E919728C5F0023E422 /* DetailInfoView.h */,
+				B655D6EA19728C5F0023E422 /* DetailInfoView.m */,
+				B68A7B2D1974AA7F00047460 /* Tag Table View */,
+				B6C046E317CB6FE000AF0336 /* Table */,
+			);
+			name = "Vertical List View";
+			sourceTree = "<group>";
+		};
+		B62DA77D196EBC6200B0CB75 /* need not */ = {
+			isa = PBXGroup;
+			children = (
+				B642FAE9179FC65200B7F537 /* EntryArrayController.h */,
+				B642FAEA179FC65200B7F537 /* EntryArrayController.m */,
+				B68627A817B37A61008A5D3C /* TableController.h */,
+				B68627A917B37A61008A5D3C /* TableController.m */,
+			);
+			name = "need not";
+			sourceTree = "<group>";
+		};
 		B642FABC179E912B00B7F537 = {
 			isa = PBXGroup;
 			children = (
@@ -100,14 +188,16 @@
 		B642FACE179E912C00B7F537 /* Scarlet */ = {
 			isa = PBXGroup;
 			children = (
+				B642FADD179E912D00B7F537 /* MainMenu.xib */,
 				B642FADA179E912C00B7F537 /* ScarletAppDelegate.h */,
 				B642FADB179E912C00B7F537 /* ScarletAppDelegate.m */,
-				B642FB0117A150A200B7F537 /* Entry.h */,
-				B642FB0217A150A200B7F537 /* Entry.m */,
-				B642FADD179E912D00B7F537 /* MainMenu.xib */,
-				B642FAE9179FC65200B7F537 /* EntryArrayController.h */,
-				B642FAEA179FC65200B7F537 /* EntryArrayController.m */,
-				B642FAE0179E912D00B7F537 /* Scarlet.xcdatamodeld */,
+				B62DA770196A8FE300B0CB75 /* Vertical List View */,
+				B674B8961963D20D001D2149 /* Expanded View (No Future) */,
+				B6C046E817CB748C00AF0336 /* Content View */,
+				B655D6DC196FBDE30023E422 /* Transformers */,
+				B6C046E417CB702A00AF0336 /* Entities */,
+				B62DA77D196EBC6200B0CB75 /* need not */,
+				B68A7B301974B1D300047460 /* Images */,
 				B642FACF179E912C00B7F537 /* Supporting Files */,
 			);
 			path = Scarlet;
@@ -133,6 +223,91 @@
 			);
 			name = MultiMarkdown;
 			path = Scarlet;
+			sourceTree = "<group>";
+		};
+		B655D6DC196FBDE30023E422 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				B6257AA919629136007DDD98 /* HTMLTransformer.h */,
+				B6257AAA19629136007DDD98 /* HTMLTransformer.m */,
+				B655D6D9196FBDD80023E422 /* IsEmpty.h */,
+				B655D6DA196FBDD80023E422 /* IsEmpty.m */,
+				B655D6E6197268370023E422 /* SetToString.h */,
+				B655D6E7197268370023E422 /* SetToString.m */,
+				B655D6EC1973BCF40023E422 /* IsTagged.h */,
+				B655D6ED1973BCF40023E422 /* IsTagged.m */,
+			);
+			name = Transformers;
+			sourceTree = "<group>";
+		};
+		B674B8961963D20D001D2149 /* Expanded View (No Future) */ = {
+			isa = PBXGroup;
+			children = (
+				B69CD671196440DD0028F4DC /* ExpandedView.xib */,
+				B69CD673196441120028F4DC /* ExpandedViewController.h */,
+				B69CD674196441120028F4DC /* ExpandedViewController.m */,
+			);
+			name = "Expanded View (No Future)";
+			sourceTree = "<group>";
+		};
+		B68A7B2D1974AA7F00047460 /* Tag Table View */ = {
+			isa = PBXGroup;
+			children = (
+				B655D6F2197414550023E422 /* TagTableViewController.h */,
+				B655D6F3197414550023E422 /* TagTableViewController.m */,
+				B655D6EF1974126E0023E422 /* TagCellView.h */,
+				B655D6F01974126E0023E422 /* TagCellView.m */,
+				B68A7B2A19744EAF00047460 /* HoverTagTableRowView.h */,
+				B68A7B2B19744EAF00047460 /* HoverTagTableRowView.m */,
+				B68A7B351974BA5800047460 /* TagTableView.h */,
+				B68A7B361974BA5800047460 /* TagTableView.m */,
+			);
+			name = "Tag Table View";
+			sourceTree = "<group>";
+		};
+		B68A7B301974B1D300047460 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B68A7B311974B3F000047460 /* icon_34677_15.png */,
+				B68A7B331974B65C00047460 /* check.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		B6C046E317CB6FE000AF0336 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				B62DA780196F65AE00B0CB75 /* HoverTableRowView.h */,
+				B62DA781196F65AE00B0CB75 /* HoverTableRowView.m */,
+				B62DA77A196E97B000B0CB75 /* EntryTableCellView.h */,
+				B62DA77B196E97B000B0CB75 /* EntryTableCellView.m */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
+		B6C046E417CB702A00AF0336 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B686279617A3D4D1008A5D3C /* Entry.h */,
+				B686279717A3D4D1008A5D3C /* Entry.m */,
+				B686279317A3C2D3008A5D3C /* Box.h */,
+				B686279417A3C2D3008A5D3C /* Box.m */,
+				B655D6E31972422E0023E422 /* Tag.h */,
+				B655D6E41972422E0023E422 /* Tag.m */,
+				B642FAE0179E912D00B7F537 /* Scarlet.xcdatamodeld */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		B6C046E817CB748C00AF0336 /* Content View */ = {
+			isa = PBXGroup;
+			children = (
+				B6C046E517CB748400AF0336 /* ContentController.h */,
+				B6C046E617CB748400AF0336 /* ContentController.m */,
+				B6C046EA17CDD1E200AF0336 /* StyledHeaderView.h */,
+				B6C046EB17CDD1E200AF0336 /* StyledHeaderView.m */,
+			);
+			name = "Content View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +337,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Scarlet;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Yuki Orikasa";
 			};
 			buildConfigurationList = B642FAC0179E912B00B7F537 /* Build configuration list for PBXProject "Scarlet" */;
@@ -187,8 +362,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69CD6701964405C0028F4DC /* VerticalListView.xib in Resources */,
 				B642FAD3179E912C00B7F537 /* InfoPlist.strings in Resources */,
+				B68A7B341974B65C00047460 /* check.png in Resources */,
 				B642FAD9179E912C00B7F537 /* Credits.rtf in Resources */,
+				B68A7B321974B3F000047460 /* icon_34677_15.png in Resources */,
+				B69CD672196440DD0028F4DC /* ExpandedView.xib in Resources */,
 				B642FADF179E912D00B7F537 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,8 +382,26 @@
 				B642FAD5179E912C00B7F537 /* main.m in Sources */,
 				B642FADC179E912C00B7F537 /* ScarletAppDelegate.m in Sources */,
 				B642FAE2179E912D00B7F537 /* Scarlet.xcdatamodeld in Sources */,
+				B655D6EE1973BCF40023E422 /* IsTagged.m in Sources */,
+				B68A7B2C19744EAF00047460 /* HoverTagTableRowView.m in Sources */,
 				B642FAEB179FC65200B7F537 /* EntryArrayController.m in Sources */,
-				B642FB0317A150A200B7F537 /* Entry.m in Sources */,
+				B674B8941963D1FB001D2149 /* VerticalListViewController.m in Sources */,
+				B69CD675196441120028F4DC /* ExpandedViewController.m in Sources */,
+				B68A7B371974BA5800047460 /* TagTableView.m in Sources */,
+				B655D6DB196FBDD80023E422 /* IsEmpty.m in Sources */,
+				B655D6F4197414550023E422 /* TagTableViewController.m in Sources */,
+				B62DA77C196E97B000B0CB75 /* EntryTableCellView.m in Sources */,
+				B62DA782196F65AE00B0CB75 /* HoverTableRowView.m in Sources */,
+				B686279517A3C2D3008A5D3C /* Box.m in Sources */,
+				B655D6F11974126E0023E422 /* TagCellView.m in Sources */,
+				B686279817A3D4D1008A5D3C /* Entry.m in Sources */,
+				B68627AA17B37A61008A5D3C /* TableController.m in Sources */,
+				B655D6E51972422E0023E422 /* Tag.m in Sources */,
+				B655D6E8197268370023E422 /* SetToString.m in Sources */,
+				B6C046E717CB748400AF0336 /* ContentController.m in Sources */,
+				B655D6EB19728C5F0023E422 /* DetailInfoView.m in Sources */,
+				B6C046EC17CDD1E200AF0336 /* StyledHeaderView.m in Sources */,
+				B6257AAB19629136007DDD98 /* HTMLTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +439,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -276,7 +472,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -361,9 +556,10 @@
 			isa = XCVersionGroup;
 			children = (
 				B642FAE8179FB9C600B7F537 /* Scarlet 2.xcdatamodel */,
+				B686279217A3C1D5008A5D3C /* Scarlet 3.xcdatamodel */,
 				B642FAE1179E912D00B7F537 /* Scarlet.xcdatamodel */,
 			);
-			currentVersion = B642FAE8179FB9C600B7F537 /* Scarlet 2.xcdatamodel */;
+			currentVersion = B642FAE1179E912D00B7F537 /* Scarlet.xcdatamodel */;
 			path = Scarlet.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

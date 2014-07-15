@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
+@class VerticalListViewController;
 
 @interface ScarletAppDelegate : NSObject <NSApplicationDelegate>
 
@@ -17,12 +18,22 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-@property (weak) IBOutlet NSTabView *contentTabView;
+@property NSMutableArray *viewControllers;
+@property (weak) NSViewController *currentViewController;
+@property VerticalListViewController *verticalListViewController;
+
 @property (weak) IBOutlet NSArrayController *entriesArrayController;
-@property (weak) IBOutlet WebView *styledWebView;
+
 @property (weak) IBOutlet NSSplitView *splitView;
+@property (weak) IBOutlet NSView *blankView;
+@property (weak) IBOutlet NSView *contentView;
+
+- (NSURL *)applicationFilesDirectory;
+
+//@property (weak) NSView *verticalListView;
+- (IBAction)addOrRemoveEntry:(id)sender;
 
 - (IBAction)saveAction:(id)sender;
-- (IBAction)changeContentTabView:(id)sender;
+- (IBAction)menuBarNew:(id)sender;
 
 @end

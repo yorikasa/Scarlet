@@ -8,7 +8,10 @@
 
 #import "ScarletAppDelegate.h"
 #import "libMultiMarkdown.h"
+#import "VerticalListViewController.h"
 #import "Entry.h"
+#import "Box.h"
+#import "EntryArrayController.h"
 
 @implementation ScarletAppDelegate
 
@@ -18,7 +21,24 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    [self makeDefaultInbox];
+
+    _viewControllers = [[NSMutableArray alloc] init];
+    //VerticalListViewController *verticalListViewController = [[VerticalListViewController alloc] init];
+    _verticalListViewController = [[VerticalListViewController alloc] init];
+    [_viewControllers addObject:_verticalListViewController];
+
+    // Load vertical list view
+    NSView *verticalListView = [_verticalListViewController view];
+    [_contentView replaceSubview:_blankView with:verticalListView];
+    _currentViewController = _verticalListViewController;
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(verticalListView);
+    NSArray *cv = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[verticalListView]|"
+                                                                     options:0 metrics:nil views:viewsDictionary];
+    NSArray *ch = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[verticalListView]|"
+                                                          options:0 metrics:nil views:viewsDictionary];
+    [_contentView addConstraints:cv];
+    [_contentView addConstraints:ch];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.yorikasa.Scarlet" in the user's Application Support directory.
@@ -138,103 +158,36 @@
     }
 }
 
-#pragma mark -
+#pragma mark - Menu bar
 
-- (void)loadHTMLWithStyle:(NSString *)html{
-    NSString *style = @"<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />";
-    NSString *newHTML = [NSString stringWithFormat:@"%@%@", style, html];
-    [[self.styledWebView mainFrame] loadHTMLString:newHTML baseURL:[self applicationFilesDirectory]];
-}
-#pragma mark My methods
-
-- (IBAction)changeContentTabView:(id)sender {
-    if ([[sender identifier] isEqualToString:@"styledViewButton"]) {
-        [self.contentTabView selectTabViewItemWithIdentifier:@"editor"];
-    }
-    else if ([[sender identifier] isEqualToString:@"contentViewButton"]){
-        [self.contentTabView selectTabViewItemWithIdentifier:@"styled"];
-        
-        // Convert HTML to Markdown
-        NSArray *selected = [self.entriesArrayController selectedObjects];
-        if (selected && [selected count] == 1) {
-            Entry *selectedEntry = [selected objectAtIndex:0];
-            if ([selectedEntry content]) {
-                NSString *html = [NSString stringWithUTF8String:markdown_to_string((char *)[[selectedEntry content] UTF8String],EXT_NOTES,0)];
-                [selectedEntry setValue:html forKey:@"html"];
-                //[[self.styledWebView mainFrame] loadHTMLString:html baseURL:[NSURL URLWithString:@"/"]];
-                [self loadHTMLWithStyle:html];
-            }
-        }
-    }
+- (IBAction)menuBarNew:(id)sender {
+    [[_verticalListViewController entryArrayController] add:sender];
 }
 
 #pragma mark -
-#pragma mark TableViewDelegate
 
-- (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
-    NSArray *selected = [self.entriesArrayController selectedObjects];
-    if (selected && [selected count] == 1) {
-        Entry *selectedEntry = [selected objectAtIndex:0];
-        if ([selectedEntry content]) {
-            //[[self.styledWebView mainFrame] loadHTMLString:[selectedEntry html] baseURL:[NSURL URLWithString:@"/"]];
-            [self loadHTMLWithStyle:[selectedEntry html]];
-        }else{
-            //[[self.styledWebView mainFrame] loadHTMLString:@"" baseURL:[NSURL URLWithString:@"/"]];
-            [self loadHTMLWithStyle:@""];
-        }
-    }else{
-//        [[self.styledWebView mainFrame] loadHTMLString:@"" baseURL:[NSURL URLWithString:@"/"]];
-        [self loadHTMLWithStyle:@""];
-    }
-}
-
-#pragma  mark SplitViewDelegate
-
-- (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview{
-    if ([[subview identifier] isEqualToString:@"sourceView"]) {
-        return YES;
-    }else{
-        return NO;
-    }
-}
-
-- (BOOL)splitView:(NSSplitView *)splitView shouldCollapseSubview:(NSView *)subview forDoubleClickOnDividerAtIndex:(NSInteger)dividerIndex{
-    return YES;
-}
-
-// Will Fix in 10.9
-//- (BOOL)splitView:(NSSplitView *)splitView shouldAdjustSizeOfSubview:(NSView *)subview{
-//    NSLog(@"%@", [subview identifier]);
-//    if ([[subview identifier] isEqualToString:@"contentView"]) {
-//        return YES;
-//    }else{
-//        return NO;
-//    }
-//}
-
-#pragma mark -
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
-    
+
     if (!_managedObjectContext) {
         return NSTerminateNow;
     }
-    
+
     if (![[self managedObjectContext] commitEditing]) {
         NSLog(@"%@:%@ unable to commit editing to terminate", [self class], NSStringFromSelector(_cmd));
         return NSTerminateCancel;
     }
-    
+
     if (![[self managedObjectContext] hasChanges]) {
         return NSTerminateNow;
     }
-    
+
     NSError *error = nil;
     if (![[self managedObjectContext] save:&error]) {
 
-        // Customize this code block to include application-specific recovery steps.              
+        // Customize this code block to include application-specific recovery steps.
         BOOL result = [sender presentError:error];
         if (result) {
             return NSTerminateCancel;
@@ -251,7 +204,7 @@
         [alert addButtonWithTitle:cancelButton];
 
         NSInteger answer = [alert runModal];
-        
+
         if (answer == NSAlertAlternateReturn) {
             return NSTerminateCancel;
         }
@@ -259,6 +212,115 @@
 
     return NSTerminateNow;
 }
+
+#pragma mark - Actions
+
+- (IBAction)addOrRemoveEntry:(id)sender {
+    switch ([sender selectedSegment]) {
+        case 0:
+            [[_verticalListViewController entryArrayController] add:sender];
+//            [_verticalListViewController willChangeValueForKey:@"isEditState"];
+//            [_verticalListViewController setIsEditState:1];
+//            [_verticalListViewController didChangeValueForKey:@"isEditState"];
+//            [_verticalListViewController setIsNewItem:1];
+            break;
+        case 1:
+            [[_verticalListViewController entryArrayController] remove:sender];
+            break;
+    }
+    //[[_verticalListViewController entryTableView] scrollRowToVisible:[[_verticalListViewController entryTableView] selectedRow]];
+}
+
+
+
+
+#pragma mark - Split View Delegate
+
+- (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview{
+    if ([[subview identifier] isEqualToString:@"sourceView"]) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+- (BOOL)splitView:(NSSplitView *)splitView shouldCollapseSubview:(NSView *)subview forDoubleClickOnDividerAtIndex:(NSInteger)dividerIndex{
+    return YES;
+}
+
+#pragma mark - Outline View Delegate
+
+- (id)outlineView:(NSOutlineView *)ov viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item{
+    if ([[item representedObject] isLeaf] == NO) {
+        return [ov makeViewWithIdentifier:@"HeaderCell" owner:self];
+    }else{
+        return [ov makeViewWithIdentifier:@"DataCell" owner:self];
+    }
+}
+
+#pragma mark - Switching Views
+
+- (IBAction)changeView:(id)sender {
+    NSView *currentView = [[_contentView subviews] firstObject];
+    switch ([sender selectedSegment]) {
+        case 0:{ // List View
+            if (![[currentView identifier] isEqualToString:@"verticalListView"]) {
+                NSView *verticalListView = [[[VerticalListViewController alloc] init] view];
+                [_contentView replaceSubview:currentView with:verticalListView];
+                NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(verticalListView);
+                NSArray *cv = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[verticalListView]|"
+                                                                      options:0 metrics:nil views:viewsDictionary];
+                NSArray *ch = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[verticalListView]|"
+                                                                      options:0 metrics:nil views:viewsDictionary];
+                [_contentView addConstraints:cv];
+                [_contentView addConstraints:ch];
+            }
+            break;
+        }
+        case 1:{  // Grid View
+            break;
+        }
+    }
+}
+
+
+#pragma - Misc
+
+- (void)makeDefaultInbox{
+    //Find "Inbox" box. If there's not, create one.
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:_managedObjectContext];
+    [request setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name LIKE 'Inbox'"];
+    [request setPredicate:predicate];
+    NSError *error;
+    NSArray *array = [_managedObjectContext executeFetchRequest:request error:&error];
+    if (array != nil) {
+        if ([array count] == 0) {
+            NSEntityDescription *boxEntity = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:_managedObjectContext];
+            Box *newBox = [[Box alloc] initWithEntity:boxEntity insertIntoManagedObjectContext:_managedObjectContext];
+            [newBox setName:@"Inbox"];
+        }
+    }
+    else{
+        // error handling
+    }
+    //[_tableController prepareSort];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end

@@ -7,16 +7,12 @@
 //
 
 #import "EntryArrayController.h"
-#import "libMultiMarkdown.h"
 
 @implementation EntryArrayController
 
 - (id) newObject{
     id newObj = [super newObject];
-    NSDate *now = [NSDate date];
-    [newObj setValue:now forKey:@"dateCreated"];
-//    NSString *source = @"#This is Header\n - and\n- this\n- is\n list!\n```\nsome code\n```\n";
-//    NSLog(@"%s",markdown_to_string((char *)[source UTF8String],1,0));
+    //[_contentTabView selectTabViewItemWithIdentifier:@"editor"];
     return newObj;
 }
 

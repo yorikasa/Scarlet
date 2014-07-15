@@ -9,5 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface EntryArrayController : NSArrayController
+//@property (weak) IBOutlet NSTabView *contentTabView;
+//@property (weak) IBOutlet NSButton *editButton;
 
 @end

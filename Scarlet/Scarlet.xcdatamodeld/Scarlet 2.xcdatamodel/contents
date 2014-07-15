@@ -19,7 +19,7 @@
     </entity>
     <elements>
         <element name="Box" positionX="-335" positionY="117" width="128" height="73"/>
-        <element name="Entry" positionX="-560" positionY="72" width="128" height="150"/>
+        <element name="Entry" positionX="-560" positionY="72" width="128" height="148"/>
         <element name="Tag" positionX="-333" positionY="26" width="128" height="73"/>
     </elements>
 </model>
