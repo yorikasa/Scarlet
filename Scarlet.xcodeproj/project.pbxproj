@@ -32,7 +32,6 @@
 		B686279817A3D4D1008A5D3C /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B686279717A3D4D1008A5D3C /* Entry.m */; };
 		B68627AA17B37A61008A5D3C /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68627A917B37A61008A5D3C /* TableController.m */; };
 		B68A7B2C19744EAF00047460 /* HoverTagTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68A7B2B19744EAF00047460 /* HoverTagTableRowView.m */; };
-		B68A7B321974B3F000047460 /* icon_34677_15.png in Resources */ = {isa = PBXBuildFile; fileRef = B68A7B311974B3F000047460 /* icon_34677_15.png */; };
 		B68A7B341974B65C00047460 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = B68A7B331974B65C00047460 /* check.png */; };
 		B68A7B371974BA5800047460 /* TagTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68A7B361974BA5800047460 /* TagTableView.m */; };
 		B69CD6701964405C0028F4DC /* VerticalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD66F1964405C0028F4DC /* VerticalListView.xib */; };
@@ -94,7 +93,6 @@
 		B68627A917B37A61008A5D3C /* TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableController.m; sourceTree = "<group>"; };
 		B68A7B2A19744EAF00047460 /* HoverTagTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoverTagTableRowView.h; sourceTree = "<group>"; };
 		B68A7B2B19744EAF00047460 /* HoverTagTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverTagTableRowView.m; sourceTree = "<group>"; };
-		B68A7B311974B3F000047460 /* icon_34677_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_34677_15.png; path = images/icon_34677_15.png; sourceTree = SOURCE_ROOT; };
 		B68A7B331974B65C00047460 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = images/check.png; sourceTree = SOURCE_ROOT; };
 		B68A7B351974BA5800047460 /* TagTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableView.h; sourceTree = "<group>"; };
 		B68A7B361974BA5800047460 /* TagTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableView.m; sourceTree = "<group>"; };
@@ -268,7 +266,6 @@
 		B68A7B301974B1D300047460 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				B68A7B311974B3F000047460 /* icon_34677_15.png */,
 				B68A7B331974B65C00047460 /* check.png */,
 			);
 			name = Images;
@@ -366,7 +363,6 @@
 				B642FAD3179E912C00B7F537 /* InfoPlist.strings in Resources */,
 				B68A7B341974B65C00047460 /* check.png in Resources */,
 				B642FAD9179E912C00B7F537 /* Credits.rtf in Resources */,
-				B68A7B321974B3F000047460 /* icon_34677_15.png in Resources */,
 				B69CD672196440DD0028F4DC /* ExpandedView.xib in Resources */,
 				B642FADF179E912D00B7F537 /* MainMenu.xib in Resources */,
 			);

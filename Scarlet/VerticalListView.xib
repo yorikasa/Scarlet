@@ -568,7 +568,7 @@ DQ
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="DCK-xL-Fza">
-                        <rect key="frame" x="0.0" y="266" width="186" height="16"/>
+                        <rect key="frame" x="0.0" y="311" width="166" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="aoH-Dj-9L0">
