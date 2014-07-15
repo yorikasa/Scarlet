@@ -12,8 +12,11 @@
 #import "Entry.h"
 #import "Box.h"
 #import "EntryArrayController.h"
+#import "TagTableViewController.h"
 
-@implementation ScarletAppDelegate
+@implementation ScarletAppDelegate{
+    NSPredicate *_searchEntryPredicate;
+}
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -39,6 +42,8 @@
                                                           options:0 metrics:nil views:viewsDictionary];
     [_contentView addConstraints:cv];
     [_contentView addConstraints:ch];
+
+    _searchEntryPredicate = [NSPredicate predicateWithFormat:@"content contains[cd] $value"];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.yorikasa.Scarlet" in the user's Application Support directory.
@@ -307,6 +312,47 @@
     }
     //[_tableController prepareSort];
 }
+
+- (void)updatePredicate:(id)sender{
+    NSString *string = [_searchField stringValue];
+    NSPredicate *predicate;
+
+    if (![string isEqualToString:@""]) {
+        NSArray *terms = [string componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
+        NSPredicate *predicateForContent;
+        NSMutableArray *subPredicatesForContent = [[NSMutableArray alloc] init];
+        for(NSString *term in terms) {
+            if([term length] == 0) { continue; }
+            NSPredicate *p = [NSPredicate predicateWithFormat:@"content contains[cd] %@", term];
+            [subPredicatesForContent addObject:p];
+        }
+        predicateForContent = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicatesForContent];
+
+        NSPredicate *predicateForTitle;
+        NSMutableArray *subPredicatesForTitle = [[NSMutableArray alloc] init];
+        for(NSString *term in terms) {
+            if([term length] == 0) { continue; }
+            NSPredicate *p = [NSPredicate predicateWithFormat:@"title contains[cd] %@", term];
+            [subPredicatesForTitle addObject:p];
+        }
+        predicateForTitle = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicatesForTitle];
+
+        NSPredicate *predicateForBox;
+        NSMutableArray *subPredicatesForBox = [[NSMutableArray alloc] init];
+        for(NSString *term in terms) {
+            if([term length] == 0) { continue; }
+            NSPredicate *p = [NSPredicate predicateWithFormat:@"box.name contains[cd] %@", term];
+            [subPredicatesForBox addObject:p];
+        }
+        predicateForBox = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicatesForBox];
+
+        predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[predicateForContent, predicateForTitle, predicateForBox]];
+    }
+    [[_verticalListViewController entryArrayController] setFilterPredicate:predicate];
+}
+
+
 
 
 

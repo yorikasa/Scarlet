@@ -18,7 +18,7 @@
 @end
 
 @implementation TagTableViewController{
-    NSPredicate *_searchPredicate;
+    NSPredicate *_searchTagPredicate;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,7 +31,7 @@
 }
 
 - (void)awakeFromNib{
-    _searchPredicate = [NSPredicate predicateWithFormat:@"name contains[cd] $value"];
+    _searchTagPredicate = [NSPredicate predicateWithFormat:@"name contains[cd] $value"];
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
@@ -104,7 +104,7 @@
     NSPredicate *predicate;
     if (![string isEqualToString:@""]) {
         NSDictionary *dictionary = @{@"value": string};
-        predicate = [_searchPredicate predicateWithSubstitutionVariables:dictionary];
+        predicate = [_searchTagPredicate predicateWithSubstitutionVariables:dictionary];
     }
     [_tagArrayController setFilterPredicate:predicate];
 }

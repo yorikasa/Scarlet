@@ -36,4 +36,7 @@
 - (IBAction)saveAction:(id)sender;
 - (IBAction)menuBarNew:(id)sender;
 
+- (IBAction)updatePredicate:(id)sender;
+@property (weak) IBOutlet NSSearchField *searchField;
+
 @end

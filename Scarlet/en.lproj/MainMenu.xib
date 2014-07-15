@@ -835,30 +835,13 @@
                         <searchField key="view" verticalHuggingPriority="750" id="920">
                             <rect key="frame" x="0.0" y="14" width="160" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="All" usesSingleLineMode="YES" bezelStyle="round" id="921">
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="" usesSingleLineMode="YES" bezelStyle="round" id="921">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </searchFieldCell>
                             <connections>
-                                <binding destination="822" name="predicate3" keyPath="filterPredicate" previousBinding="jry-nW-8hf" id="Obc-uK-vJs">
-                                    <dictionary key="options">
-                                        <string key="NSDisplayName">Content</string>
-                                        <string key="NSPredicateFormat">content contains[c] $value</string>
-                                    </dictionary>
-                                </binding>
-                                <binding destination="822" name="predicate" keyPath="filterPredicate" id="ili-gg-qav">
-                                    <dictionary key="options">
-                                        <string key="NSDisplayName">All</string>
-                                        <string key="NSPredicateFormat">(content contains[c] $value) or (title contains[c] $value)</string>
-                                    </dictionary>
-                                </binding>
-                                <binding destination="822" name="predicate2" keyPath="filterPredicate" previousBinding="ili-gg-qav" id="jry-nW-8hf">
-                                    <dictionary key="options">
-                                        <string key="NSDisplayName">Title</string>
-                                        <string key="NSPredicateFormat">title contains[c] $value</string>
-                                    </dictionary>
-                                </binding>
+                                <action selector="updatePredicate:" target="494" id="aTN-V1-jBH"/>
                             </connections>
                         </searchField>
                     </toolbarItem>
@@ -945,6 +928,7 @@
                 <outlet property="blankView" destination="hi1-Xl-a9n" id="0G1-if-t10"/>
                 <outlet property="contentView" destination="7ct-sq-YuR" id="jlW-ti-9Ub"/>
                 <outlet property="entriesArrayController" destination="822" id="879"/>
+                <outlet property="searchField" destination="920" id="xgk-e7-uKg"/>
                 <outlet property="splitView" destination="J9d-4X-MYR" id="Bqt-iu-tZD"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
