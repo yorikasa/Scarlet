@@ -14,9 +14,7 @@
 #import "EntryArrayController.h"
 #import "TagTableViewController.h"
 
-@implementation ScarletAppDelegate{
-    NSPredicate *_searchEntryPredicate;
-}
+@implementation ScarletAppDelegate
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -27,14 +25,12 @@
     [self makeDefaultInbox];
 
     _viewControllers = [[NSMutableArray alloc] init];
-    //VerticalListViewController *verticalListViewController = [[VerticalListViewController alloc] init];
     _verticalListViewController = [[VerticalListViewController alloc] init];
     [_viewControllers addObject:_verticalListViewController];
 
-    // Load vertical list view
+    // Load vertical list view with Constraints
     NSView *verticalListView = [_verticalListViewController view];
     [_contentView replaceSubview:_blankView with:verticalListView];
-    _currentViewController = _verticalListViewController;
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(verticalListView);
     NSArray *cv = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[verticalListView]|"
                                                                      options:0 metrics:nil views:viewsDictionary];
@@ -42,8 +38,6 @@
                                                           options:0 metrics:nil views:viewsDictionary];
     [_contentView addConstraints:cv];
     [_contentView addConstraints:ch];
-
-    _searchEntryPredicate = [NSPredicate predicateWithFormat:@"content contains[cd] $value"];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.yorikasa.Scarlet" in the user's Application Support directory.
@@ -163,15 +157,6 @@
     }
 }
 
-#pragma mark - Menu bar
-
-- (IBAction)menuBarNew:(id)sender {
-    [[_verticalListViewController entryArrayController] add:sender];
-}
-
-#pragma mark -
-
-
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
@@ -218,35 +203,10 @@
     return NSTerminateNow;
 }
 
-#pragma mark - Actions
-
-- (IBAction)addOrRemoveEntry:(id)sender {
-    switch ([sender selectedSegment]) {
-        case 0:
-            [[_verticalListViewController entryArrayController] add:sender];
-//            [_verticalListViewController willChangeValueForKey:@"isEditState"];
-//            [_verticalListViewController setIsEditState:1];
-//            [_verticalListViewController didChangeValueForKey:@"isEditState"];
-//            [_verticalListViewController setIsNewItem:1];
-            break;
-        case 1:
-            [[_verticalListViewController entryArrayController] remove:sender];
-            break;
-    }
-    //[[_verticalListViewController entryTableView] scrollRowToVisible:[[_verticalListViewController entryTableView] selectedRow]];
-}
-
-
-
-
 #pragma mark - Split View Delegate
 
 - (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview{
-    if ([[subview identifier] isEqualToString:@"sourceView"]) {
-        return YES;
-    }else{
-        return NO;
-    }
+    return YES;
 }
 
 - (BOOL)splitView:(NSSplitView *)splitView shouldCollapseSubview:(NSView *)subview forDoubleClickOnDividerAtIndex:(NSInteger)dividerIndex{
@@ -263,57 +223,20 @@
     }
 }
 
-#pragma mark - Switching Views
+#pragma mark - Actions
 
-- (IBAction)changeView:(id)sender {
-    NSView *currentView = [[_contentView subviews] firstObject];
+- (IBAction)addOrRemoveEntry:(id)sender {
     switch ([sender selectedSegment]) {
-        case 0:{ // List View
-            if (![[currentView identifier] isEqualToString:@"verticalListView"]) {
-                NSView *verticalListView = [[[VerticalListViewController alloc] init] view];
-                [_contentView replaceSubview:currentView with:verticalListView];
-                NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(verticalListView);
-                NSArray *cv = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[verticalListView]|"
-                                                                      options:0 metrics:nil views:viewsDictionary];
-                NSArray *ch = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[verticalListView]|"
-                                                                      options:0 metrics:nil views:viewsDictionary];
-                [_contentView addConstraints:cv];
-                [_contentView addConstraints:ch];
-            }
+        case 0:
+            [[_verticalListViewController entryArrayController] add:sender];
             break;
-        }
-        case 1:{  // Grid View
+        case 1:
+            [[_verticalListViewController entryArrayController] remove:sender];
             break;
-        }
     }
 }
 
-
-#pragma - Misc
-
-- (void)makeDefaultInbox{
-    //Find "Inbox" box. If there's not, create one.
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:_managedObjectContext];
-    [request setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name LIKE 'Inbox'"];
-    [request setPredicate:predicate];
-    NSError *error;
-    NSArray *array = [_managedObjectContext executeFetchRequest:request error:&error];
-    if (array != nil) {
-        if ([array count] == 0) {
-            NSEntityDescription *boxEntity = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:_managedObjectContext];
-            Box *newBox = [[Box alloc] initWithEntity:boxEntity insertIntoManagedObjectContext:_managedObjectContext];
-            [newBox setName:@"Inbox"];
-        }
-    }
-    else{
-        // error handling
-    }
-    //[_tableController prepareSort];
-}
-
-- (void)updatePredicate:(id)sender{
+- (void)search:(id)sender{
     NSString *string = [_searchField stringValue];
     NSPredicate *predicate;
 
@@ -352,7 +275,34 @@
     [[_verticalListViewController entryArrayController] setFilterPredicate:predicate];
 }
 
+#pragma mark - Menu bar
 
+- (IBAction)menuBarNew:(id)sender {
+    [[_verticalListViewController entryArrayController] add:sender];
+}
+
+#pragma -
+
+- (void)makeDefaultInbox{
+    //Find "Inbox" box. If there's not, create one.
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:_managedObjectContext];
+    [request setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name LIKE 'Inbox'"];
+    [request setPredicate:predicate];
+    NSError *error;
+    NSArray *array = [_managedObjectContext executeFetchRequest:request error:&error];
+    if (array != nil) {
+        if ([array count] == 0) {
+            NSEntityDescription *boxEntity = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:_managedObjectContext];
+            Box *newBox = [[Box alloc] initWithEntity:boxEntity insertIntoManagedObjectContext:_managedObjectContext];
+            [newBox setName:@"Inbox"];
+        }
+    }
+    else{
+        // error handling
+    }
+}
 
 
 

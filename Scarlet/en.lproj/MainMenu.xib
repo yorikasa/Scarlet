@@ -672,11 +672,6 @@
             </items>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="1451"/>
-        <arrayController mode="entity" entityName="Entry" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="822" userLabel="Entries" customClass="EntryArrayController">
-            <connections>
-                <binding destination="494" name="managedObjectContext" keyPath="managedObjectContext" id="824"/>
-            </connections>
-        </arrayController>
         <window title="Scarlet" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
@@ -841,7 +836,7 @@
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </searchFieldCell>
                             <connections>
-                                <action selector="updatePredicate:" target="494" id="aTN-V1-jBH"/>
+                                <action selector="search:" target="494" id="J0c-bR-Vcv"/>
                             </connections>
                         </searchField>
                     </toolbarItem>
@@ -868,29 +863,6 @@
                             <action selector="addOrRemoveEntry:" target="494" id="Mt0-lf-5JW"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="3B89D3E9-69F1-44B7-87FA-F37658AFA4CB" label="View" paletteLabel="View" id="L2A-3v-sMy">
-                        <nil key="toolTip"/>
-                        <size key="minSize" width="57" height="25"/>
-                        <size key="maxSize" width="57" height="28"/>
-                        <segmentedControl key="view" verticalHuggingPriority="750" id="SRA-1h-hfs">
-                            <rect key="frame" x="0.0" y="14" width="57" height="25"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <segmentedCell key="cell" alignment="left" style="texturedSquare" trackingMode="selectOne" id="g5X-V2-Waw">
-                                <font key="font" metaFont="system"/>
-                                <segments>
-                                    <segment image="NSListViewTemplate" selected="YES">
-                                        <nil key="label"/>
-                                    </segment>
-                                    <segment image="NSIconViewTemplate" tag="1">
-                                        <nil key="label"/>
-                                    </segment>
-                                </segments>
-                            </segmentedCell>
-                        </segmentedControl>
-                        <connections>
-                            <action selector="changeView:" target="494" id="bB9-Kl-pMc"/>
-                        </connections>
-                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="C358D42A-9E7F-4934-94E0-7CFBAD5CC3C3" label="Box" paletteLabel="Box" id="rCm-hs-XpY">
                         <nil key="toolTip"/>
                         <size key="minSize" width="100" height="28"/>
@@ -915,8 +887,6 @@
                 <defaultToolbarItems>
                     <toolbarItem reference="rCm-hs-XpY"/>
                     <toolbarItem reference="795"/>
-                    <toolbarItem reference="L2A-3v-sMy"/>
-                    <toolbarItem reference="795"/>
                     <toolbarItem reference="djY-Fj-DKf"/>
                     <toolbarItem reference="798"/>
                     <toolbarItem reference="922"/>
@@ -927,7 +897,6 @@
             <connections>
                 <outlet property="blankView" destination="hi1-Xl-a9n" id="0G1-if-t10"/>
                 <outlet property="contentView" destination="7ct-sq-YuR" id="jlW-ti-9Ub"/>
-                <outlet property="entriesArrayController" destination="822" id="879"/>
                 <outlet property="searchField" destination="920" id="xgk-e7-uKg"/>
                 <outlet property="splitView" destination="J9d-4X-MYR" id="Bqt-iu-tZD"/>
                 <outlet property="window" destination="371" id="532"/>
@@ -943,8 +912,6 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="8" height="8"/>
-        <image name="NSIconViewTemplate" width="11" height="10"/>
-        <image name="NSListViewTemplate" width="11" height="10"/>
         <image name="NSRemoveTemplate" width="8" height="8"/>
     </resources>
 </document>

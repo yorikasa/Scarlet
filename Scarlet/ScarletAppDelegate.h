@@ -18,25 +18,26 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+#pragma mark - Methods
+- (NSURL *)applicationFilesDirectory;
+
+#pragma mark - View Controllers
 @property NSMutableArray *viewControllers;
-@property (weak) NSViewController *currentViewController;
 @property VerticalListViewController *verticalListViewController;
 
-@property (weak) IBOutlet NSArrayController *entriesArrayController;
-
+#pragma mark - UI Elements Outlets
 @property (weak) IBOutlet NSSplitView *splitView;
 @property (weak) IBOutlet NSView *blankView;
 @property (weak) IBOutlet NSView *contentView;
-
-- (NSURL *)applicationFilesDirectory;
-
-//@property (weak) NSView *verticalListView;
-- (IBAction)addOrRemoveEntry:(id)sender;
-
-- (IBAction)saveAction:(id)sender;
-- (IBAction)menuBarNew:(id)sender;
-
-- (IBAction)updatePredicate:(id)sender;
 @property (weak) IBOutlet NSSearchField *searchField;
 
+#pragma mark - Actions
+- (IBAction)addOrRemoveEntry:(id)sender;
+- (IBAction)search:(id)sender;
+
+#pragma mark - Menu Bar Actions
+- (IBAction)menuBarNew:(id)sender;
+- (IBAction)saveAction:(id)sender;
+
 @end
+
