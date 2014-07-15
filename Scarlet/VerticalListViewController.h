@@ -17,7 +17,6 @@
 
 #pragma mark - Methods
 - (NSManagedObjectContext *)managedObjectContext;
-- (void)showRelatedNotes:(id)sender;
 
 #pragma mark - Controllers IBOutlet
 @property (strong) IBOutlet NSArrayController *entryArrayController;
@@ -31,7 +30,6 @@
 @property (weak) IBOutlet NSView *detailInfoView;
 @property (weak) IBOutlet NSPopUpButton *boxPopUpButton;
 @property (weak) IBOutlet NSTextField *boxNameTextField;
-@property (weak) IBOutlet NSTokenField *tagsTokenField;
 @property (unsafe_unretained) IBOutlet NSTextView *editorTextView;
 @property (weak) IBOutlet WebView *htmlWebView;
 @property (weak) IBOutlet NSButton *editButton;
@@ -42,7 +40,6 @@
 #pragma mark - IBAction
 - (IBAction)addBox:(id)sender;
 - (IBAction)showAddBoxPopOver:(id)sender;
-- (IBAction)returnTagsTokenField:(id)sender;
 - (IBAction)showTagsPopOver:(id)sender;
 
 

@@ -65,106 +65,15 @@ int gIsEditing = 0;
     }
     [self didChangeValueForKey:@"isEditState"];
     [self loadHTMLWithStyle];
-
-    // About Tags Token Field
-    [_tagsTokenField setEnabled:YES];
-    [[_tagsTokenField cell] setPlaceholderString:@"Add Tags..."];
-    if ([[_entryArrayController selectedObjects] count] == 1) {
-        [_tagsTokenField setObjectValue:[[[_entryArrayController selectedObjects][0] tags] allObjects]];
-    }else if ([[_entryArrayController selectedObjects] count] == 0){
-        [_tagsTokenField setObjectValue:@[]];
-        [_tagsTokenField setEnabled:NO];
-        [[_tagsTokenField cell] setPlaceholderString:@"No Selection"];
-    }else{
-        [_tagsTokenField setObjectValue:@[]];
-        [[_tagsTokenField cell] setPlaceholderString:@"Multiple Selection"];
-    }
 }
 
-#pragma mark - NSTokenField Delegates
-
-- (NSString *)tokenField:(NSTokenField *)tokenField displayStringForRepresentedObject:(id)representedObject{
-    return [representedObject name];
-}
-
-- (id)tokenField:(NSTokenField *)tokenField representedObjectForEditingString:(NSString *)editingString{
-
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:[self managedObjectContext]];
-    [request setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name LIKE %@", editingString];
-    [request setPredicate:predicate];
-    NSError *error;
-    NSArray *array = [[self managedObjectContext] executeFetchRequest:request error:&error];
-    //Tag *newTag = nil;
-    if (array != nil) {
-        if ([array count] == 0) {
-            NSEntityDescription *tagEntity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:[self managedObjectContext]];
-            Tag *newTag = [[Tag alloc] initWithEntity:tagEntity insertIntoManagedObjectContext:[self  managedObjectContext]];
-            [newTag setName:editingString];
-            return newTag;
-        }else if ([array count] == 1){
-            return array[0];
-        }
-    }
-    else{
-        // error handling
-    }
-    return nil;
-}
-
-- (BOOL)tokenField:(NSTokenField *)tokenField hasMenuForRepresentedObject:(id)representedObject {
-    return YES;
-}
-
-- (NSMenu *)tokenField:(NSTokenField *)tokenField menuForRepresentedObject:(id)representedObject {
-    NSMenu *tokenMenu = [[NSMenu alloc] init];
-
-    if (!representedObject){
-        return nil;
-    }
-    NSMenuItem *showItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Show Notes tagged with \"%@\"", [representedObject name]] action:@selector(showRelatedNotes:) keyEquivalent:@""];
-    [showItem setTarget:self];
-    [showItem setRepresentedObject:representedObject];
-    [tokenMenu addItem:showItem];
-
-    return tokenMenu;
-}
-
-- (void)controlTextDidBeginEditing:(NSNotification *)aNotification{
-    gIsEditing = 1;
-}
-
-- (void)controlTextDidChange:(NSNotification *)aNotification{
-    gIsEditing = 1;
-}
-
-- (void)controlTextDidEndEditing:(NSNotification *)aNotification{
-    if (gIsEditing == 1) {
-        for (Entry *entry in [_entryArrayController selectedObjects]) {
-            [entry setTags:[NSSet setWithArray:[_tagsTokenField objectValue]]];
-        }
-    }
-    gIsEditing = 0;
-}
-
-#pragma mark - Tags Token Field & Button
-
-- (IBAction)returnTagsTokenField:(id)sender {
-    for (Entry *entry in [_entryArrayController selectedObjects]) {
-        [entry setTags:[NSSet setWithArray:[_tagsTokenField objectValue]]];
-    }
-}
+#pragma mark - Tags Button
 
 - (IBAction)showTagsPopOver:(id)sender {
     [[_tagTableViewController searchField] setStringValue:@""];
     [[_tagTableViewController tagTableView] reloadData];
     [[_tagTableViewController tagsPopOver] showRelativeToRect:[_tagsButton bounds] ofView:_tagsButton preferredEdge:NSMaxYEdge];
 }
-
-- (void)showRelatedNotes:(id)sender{
-}
-
 
 #pragma - Table View Sorting
 
