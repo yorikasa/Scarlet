@@ -50,16 +50,12 @@ int gIsEditing = 0;
     return [(ScarletAppDelegate *)[NSApp delegate] managedObjectContext];
 }
 
-- (void)appendCustomBoxMenuItems{
-    //[_boxPopUpButton addItemWithTitle:@"Custom String"];
-    [[_boxPopUpButton menu] addItem:[NSMenuItem separatorItem]];
-    [[_boxPopUpButton menu] addItem:[[NSMenuItem alloc] initWithTitle:@"Add New Box..." action:NULL keyEquivalent:@""]];
-}
-
 #pragma mark - Table View Delegates / Data Source
 
-// WebView does not support bindings
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
+    [_entryTableView scrollRowToVisible:[_entryTableView selectedRow]];
+
+    // For new notes, open edit view. Otherwise, open HTML view
     [self willChangeValueForKey:@"isEditState"];
     _isEditState = 0;
     if ([[_entryArrayController selectedObjects] count] == 1) {
@@ -68,21 +64,7 @@ int gIsEditing = 0;
         }
     }
     [self didChangeValueForKey:@"isEditState"];
-
-
-    [_entryTableView scrollRowToVisible:[_entryTableView selectedRow]];
-
     [self loadHTMLWithStyle];
-
-//    NSArray *selected = [_entriesArrayController selectedObjects];
-//    if (selected && [selected count] == 1) {
-//        [_contentController loadStyledView:selected[0]];
-//        //[_editButton setState:1];
-//        NSLog(@"Color: %@", [_dateText stringValue]);
-//    }else{
-//        [_contentController loadStyledView:nil];
-//        //[_editButton setState:0];
-//    }
 
     // About Tags Token Field
     [_tagsTokenField setEnabled:YES];
@@ -97,20 +79,6 @@ int gIsEditing = 0;
         [_tagsTokenField setObjectValue:@[]];
         [[_tagsTokenField cell] setPlaceholderString:@"Multiple Selection"];
     }
-
-//    if ([[_entryArrayController selectedObjects] count] == 1) {
-//        Entry *entry = [_entryArrayController selectedObjects][0];
-//        for (Tag *tag in [_tagsArrayController arrangedObjects]) {
-//            [_taggedTags addObject:@NO];
-//            for (Tag *tag2 in [entry tags]) {
-//                if ([[tag name] isEqualToString:[tag2 name]]) {
-//                    [_taggedTags replaceObjectAtIndex:[_taggedTags count]-1 withObject:@YES];
-//                    continue;
-//                }
-//            }
-//        }
-//    }
-
 }
 
 #pragma mark - NSTokenField Delegates
@@ -163,14 +131,6 @@ int gIsEditing = 0;
     return tokenMenu;
 }
 
-//- (NSArray *)tokenField:(NSTokenField *)tokenField completionsForSubstring:(NSString *)substring indexOfToken:(NSInteger)tokenIndex indexOfSelectedItem:(NSInteger *)selectedIndex{
-//
-//}
-
-- (void)showRelatedNotes:(id)sender{
-    //NSLog(@"%@ is your name!", [[sender representedObject] name]);
-}
-
 - (void)controlTextDidBeginEditing:(NSNotification *)aNotification{
     gIsEditing = 1;
 }
@@ -186,6 +146,23 @@ int gIsEditing = 0;
         }
     }
     gIsEditing = 0;
+}
+
+#pragma mark - Tags Token Field & Button
+
+- (IBAction)returnTagsTokenField:(id)sender {
+    for (Entry *entry in [_entryArrayController selectedObjects]) {
+        [entry setTags:[NSSet setWithArray:[_tagsTokenField objectValue]]];
+    }
+}
+
+- (IBAction)showTagsPopOver:(id)sender {
+    [[_tagTableViewController searchField] setStringValue:@""];
+    [[_tagTableViewController tagTableView] reloadData];
+    [[_tagTableViewController tagsPopOver] showRelativeToRect:[_tagsButton bounds] ofView:_tagsButton preferredEdge:NSMaxYEdge];
+}
+
+- (void)showRelatedNotes:(id)sender{
 }
 
 
@@ -228,7 +205,9 @@ int gIsEditing = 0;
 //    [self setSortDescriptorsWithKey:[[NSUserDefaults standardUserDefaults] objectForKey:@"sortBy"] ascending:[[NSUserDefaults standardUserDefaults] boolForKey:@"sortAscending"] option:option];
 //}
 
-- (IBAction)createBox:(id)sender {
+#pragma mark - Box Popup and Popover
+
+- (IBAction)showAddBoxPopOver:(id)sender {
     [_createBoxPopOver showRelativeToRect:[_boxPopUpButton bounds] ofView:_boxPopUpButton preferredEdge:NSMaxYEdge];
 }
 
@@ -258,19 +237,12 @@ int gIsEditing = 0;
     [_boxNameTextField setStringValue:@""];
 }
 
-- (IBAction)returnTagsTokenField:(id)sender {
-    //[_entryArrayController willChangeValueForKey:@"tags"];
-    for (Entry *entry in [_entryArrayController selectedObjects]) {
-        [entry setTags:[NSSet setWithArray:[_tagsTokenField objectValue]]];
-    }
-    //[_entryArrayController didChangeValueForKey:@"tags"];
+- (void)appendCustomBoxMenuItems{
+    [[_boxPopUpButton menu] addItem:[NSMenuItem separatorItem]];
+    [[_boxPopUpButton menu] addItem:[[NSMenuItem alloc] initWithTitle:@"Add New Box..." action:NULL keyEquivalent:@""]];
 }
 
-- (IBAction)showTagsPopOver:(id)sender {
-    [[_tagTableViewController searchField] setStringValue:@""];
-    [[_tagTableViewController tagTableView] reloadData];
-    [[_tagTableViewController tagsPopOver] showRelativeToRect:[_tagsButton bounds] ofView:_tagsButton preferredEdge:NSMaxYEdge];
-}
+#pragma mark -
 
 - (void)loadHTMLWithStyle{
     NSString *html;
@@ -283,9 +255,6 @@ int gIsEditing = 0;
     NSString *style = @"<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />";
     NSString *newHTML = [NSString stringWithFormat:@"%@%@", style, html];
     [[_htmlWebView mainFrame] loadHTMLString:newHTML baseURL:[(ScarletAppDelegate *)[NSApp delegate] applicationFilesDirectory]];
-//    NSScrollView *webViewScrollView = [[[[_htmlWebView mainFrame] frameView] documentView] enclosingScrollView];
-//    [webViewScrollView setVerticalScrollElasticity:NSScrollElasticityAutomatic];
-//    [webViewScrollView setHorizontalScrollElasticity:NSScrollElasticityAutomatic];
 }
 
 

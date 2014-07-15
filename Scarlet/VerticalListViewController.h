@@ -41,7 +41,7 @@
 
 #pragma mark - IBAction
 - (IBAction)addBox:(id)sender;
-- (IBAction)createBox:(id)sender;
+- (IBAction)showAddBoxPopOver:(id)sender;
 - (IBAction)returnTagsTokenField:(id)sender;
 - (IBAction)showTagsPopOver:(id)sender;
 

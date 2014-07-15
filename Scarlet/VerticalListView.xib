@@ -271,7 +271,7 @@
                                                         <menuItem isSeparatorItem="YES" id="NnD-HP-HOC"/>
                                                         <menuItem title="Create New Box..." id="IOB-L0-MD1">
                                                             <connections>
-                                                                <action selector="createBox:" target="-2" id="owi-Sr-ogW"/>
+                                                                <action selector="showAddBoxPopOver:" target="-2" id="xOU-qi-I1b"/>
                                                             </connections>
                                                         </menuItem>
                                                     </items>
