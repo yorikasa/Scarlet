@@ -25,6 +25,8 @@
 		B655D6F11974126E0023E422 /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6F01974126E0023E422 /* TagCellView.m */; };
 		B655D6F4197414550023E422 /* TagTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6F3197414550023E422 /* TagTableViewController.m */; };
 		B674B8941963D1FB001D2149 /* VerticalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B674B8921963D1FB001D2149 /* VerticalListViewController.m */; };
+		B681359619762FE5006BBF69 /* PreferenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B681359419762FE5006BBF69 /* PreferenceWindowController.m */; };
+		B681359719762FE5006BBF69 /* Preference.xib in Resources */ = {isa = PBXBuildFile; fileRef = B681359519762FE5006BBF69 /* Preference.xib */; };
 		B686279517A3C2D3008A5D3C /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = B686279417A3C2D3008A5D3C /* Box.m */; };
 		B686279817A3D4D1008A5D3C /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B686279717A3D4D1008A5D3C /* Entry.m */; };
 		B68627AA17B37A61008A5D3C /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68627A917B37A61008A5D3C /* TableController.m */; };
@@ -73,6 +75,9 @@
 		B655D6F3197414550023E422 /* TagTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableViewController.m; sourceTree = "<group>"; };
 		B674B8911963D1FB001D2149 /* VerticalListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalListViewController.h; sourceTree = "<group>"; };
 		B674B8921963D1FB001D2149 /* VerticalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalListViewController.m; sourceTree = "<group>"; };
+		B681359319762FE5006BBF69 /* PreferenceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceWindowController.h; sourceTree = "<group>"; };
+		B681359419762FE5006BBF69 /* PreferenceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceWindowController.m; sourceTree = "<group>"; };
+		B681359519762FE5006BBF69 /* Preference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preference.xib; sourceTree = "<group>"; };
 		B686279217A3C1D5008A5D3C /* Scarlet 3.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "Scarlet 3.xcdatamodel"; sourceTree = "<group>"; };
 		B686279317A3C2D3008A5D3C /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		B686279417A3C2D3008A5D3C /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
@@ -174,6 +179,7 @@
 				B642FADB179E912C00B7F537 /* ScarletAppDelegate.m */,
 				B62DA770196A8FE300B0CB75 /* Vertical List View */,
 				B674B8961963D20D001D2149 /* Expanded View (No Future) */,
+				B681359219762FA2006BBF69 /* Preference */,
 				B655D6DC196FBDE30023E422 /* Transformers */,
 				B6C046E417CB702A00AF0336 /* Entities */,
 				B62DA77D196EBC6200B0CB75 /* need not */,
@@ -226,6 +232,16 @@
 				B69CD674196441120028F4DC /* ExpandedViewController.m */,
 			);
 			name = "Expanded View (No Future)";
+			sourceTree = "<group>";
+		};
+		B681359219762FA2006BBF69 /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				B681359519762FE5006BBF69 /* Preference.xib */,
+				B681359319762FE5006BBF69 /* PreferenceWindowController.h */,
+				B681359419762FE5006BBF69 /* PreferenceWindowController.m */,
+			);
+			name = Preference;
 			sourceTree = "<group>";
 		};
 		B68A7B2D1974AA7F00047460 /* Tag Table View */ = {
@@ -332,6 +348,7 @@
 				B642FAD9179E912C00B7F537 /* Credits.rtf in Resources */,
 				B69CD672196440DD0028F4DC /* ExpandedView.xib in Resources */,
 				B642FADF179E912D00B7F537 /* MainMenu.xib in Resources */,
+				B681359719762FE5006BBF69 /* Preference.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B681359619762FE5006BBF69 /* PreferenceWindowController.m in Sources */,
 				B642FAD5179E912C00B7F537 /* main.m in Sources */,
 				B642FADC179E912C00B7F537 /* ScarletAppDelegate.m in Sources */,
 				B642FAE2179E912D00B7F537 /* Scarlet.xcdatamodeld in Sources */,
@@ -397,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -422,7 +441,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
@@ -430,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -448,7 +468,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};

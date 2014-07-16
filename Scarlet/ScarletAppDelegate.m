@@ -12,8 +12,11 @@
 #import "Entry.h"
 #import "Box.h"
 #import "TagTableViewController.h"
+#import "PreferenceWindowController.h"
 
-@implementation ScarletAppDelegate
+@implementation ScarletAppDelegate{
+    PreferenceWindowController *_preferenceWindowController;
+}
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -397,6 +400,13 @@
     [[_verticalListViewController entryArrayController] add:sender];
 }
 
+- (IBAction)showPreferenceWindow:(id)sender {
+    if (!_preferenceWindowController) {
+        _preferenceWindowController = [[PreferenceWindowController alloc] init];
+    }
+    [_preferenceWindowController showWindow:self];
+}
+
 #pragma mark -
 
 - (void)makeDefaultInbox{
@@ -419,6 +429,7 @@
         // error handling
     }
 }
+
 
 
 

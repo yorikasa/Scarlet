@@ -41,6 +41,10 @@ int gIsEditing = 0;
         [_editorTextView setTextContainerInset:NSMakeSize(5, 10)];
         [_editButton setState:0];
         _isEditState = 0;
+
+//        [_editorTextView setFont:[NSFont fontWithName:@"Lucida Grande" size:16]];
+//        [_editorTextView setTextColor:[NSColor redColor]];
+//        [_editorTextView setBackgroundColor:[NSColor blackColor]];
     }
     return self;
 }

@@ -79,8 +79,8 @@
                                                                         <rect key="frame" x="8" y="39" width="349" height="17"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="CoreDataのデータを変えて" usesSingleLineMode="YES" id="lvs-NI-7xC">
-                                                                            <font key="font" metaFont="system"/>
-                                                                            <color key="textColor" red="0.30196079609999998" green="0.30196079609999998" blue="0.30196079609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <font key="font" size="13" name="LucidaGrande"/>
+                                                                            <color key="textColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                         </textFieldCell>
                                                                         <connections>
@@ -205,7 +205,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="556" height="615"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView importsGraphics="NO" richText="NO" findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx">
+                                            <textView importsGraphics="NO" richText="NO" findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx">
                                                 <rect key="frame" x="0.0" y="0.0" width="556" height="615"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -233,7 +233,7 @@
                                 <webView verticalCompressionResistancePriority="749" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knw-2L-RWU">
                                     <rect key="frame" x="0.0" y="0.0" width="556" height="615"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
+                                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaScriptCanOpenWindowsAutomatically="NO">
                                         <nil key="identifier"/>
                                     </webPreferences>
                                     <connections>

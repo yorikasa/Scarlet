@@ -47,6 +47,7 @@
 - (IBAction)saveAction:(id)sender;
 - (IBAction)changeSort:(id)sender;
 - (IBAction)changeOrder:(id)sender;
+- (IBAction)showPreferenceWindow:(id)sender;
 
 @end
 
