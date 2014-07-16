@@ -25,6 +25,13 @@
 @property NSMutableArray *viewControllers;
 @property VerticalListViewController *verticalListViewController;
 
+#pragma mark - Menu Items
+@property (weak) IBOutlet NSMenuItem *menuSortByDateCreated;
+@property (weak) IBOutlet NSMenuItem *menuSortByDateModified;
+@property (weak) IBOutlet NSMenuItem *menuSortByTitle;
+@property (weak) IBOutlet NSMenuItem *menuSortAscending;
+@property (weak) IBOutlet NSMenuItem *menuSortDescending;
+
 #pragma mark - UI Elements Outlets
 @property (weak) IBOutlet NSSplitView *splitView;
 @property (weak) IBOutlet NSView *blankView;
@@ -38,6 +45,8 @@
 #pragma mark - Menu Bar Actions
 - (IBAction)menuBarNew:(id)sender;
 - (IBAction)saveAction:(id)sender;
+- (IBAction)changeSort:(id)sender;
+- (IBAction)changeOrder:(id)sender;
 
 @end
 

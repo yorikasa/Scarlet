@@ -601,19 +601,34 @@
                                     <items>
                                         <menuItem title="Date Created" id="1468">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="changeSort:" target="494" id="1Iy-nm-eNC"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Date Modified" id="1469">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="changeSort:" target="494" id="UQZ-51-1tv"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Title" id="1465">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="changeSort:" target="494" id="nER-E9-4a9"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="1470"/>
                                         <menuItem title="▲ Ascending" id="1471">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="changeOrder:" target="494" id="13e-jF-GJs"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="▼ Descending" id="1472">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="changeOrder:" target="494" id="hg1-SJ-ysu"/>
+                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
@@ -897,6 +912,11 @@
             <connections>
                 <outlet property="blankView" destination="hi1-Xl-a9n" id="0G1-if-t10"/>
                 <outlet property="contentView" destination="7ct-sq-YuR" id="jlW-ti-9Ub"/>
+                <outlet property="menuSortAscending" destination="1471" id="ytT-fu-omh"/>
+                <outlet property="menuSortByDateCreated" destination="1468" id="g7Y-wE-Fzp"/>
+                <outlet property="menuSortByDateModified" destination="1469" id="ejZ-iQ-K3B"/>
+                <outlet property="menuSortByTitle" destination="1465" id="N4G-Yv-zvt"/>
+                <outlet property="menuSortDescending" destination="1472" id="XSx-J5-90P"/>
                 <outlet property="searchField" destination="920" id="xgk-e7-uKg"/>
                 <outlet property="splitView" destination="J9d-4X-MYR" id="Bqt-iu-tZD"/>
                 <outlet property="window" destination="371" id="532"/>

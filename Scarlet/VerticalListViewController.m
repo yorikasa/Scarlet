@@ -74,45 +74,6 @@ int gIsEditing = 0;
     [[_tagTableViewController tagsPopOver] showRelativeToRect:[_tagsButton bounds] ofView:_tagsButton preferredEdge:NSMaxYEdge];
 }
 
-#pragma - Table View Sorting
-
-//- (void)setSortDescriptorsWithKey:(NSString *)key ascending:(BOOL)order option:(BOOL)option{
-//    if (option) {
-//        [_entriesArrayController setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:key ascending:order selector:@selector(caseInsensitiveCompare:)]]];
-//    }
-//    else{
-//        [_entriesArrayController setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:key ascending:order]]];
-//    }
-//}
-//
-//- (void)prepareSort{
-//    BOOL option;
-//    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"sortBy"] isEqualToString:@"title"]) {
-//        option = YES;
-//        [_menuSortByTitle setState:NSOnState];
-//    }
-//    else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"sortBy"] isEqualToString:@"dateCreated"]){
-//        [_menuSortByDateCreated setState:NSOnState];
-//        option = NO;
-//    }
-//    else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"sortBy"] isEqualToString:@"dateModified"]){
-//        [_menuSortByDateModified setState:NSOnState];
-//        option = NO;
-//    }
-//    else{
-//        option = NO;
-//    }
-//
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"sortAscending"]) {
-//        [_menuSortAscending setState:NSOnState];
-//    }
-//    else{
-//        [_menuSortDescending setState:NSOnState];
-//    }
-//
-//    [self setSortDescriptorsWithKey:[[NSUserDefaults standardUserDefaults] objectForKey:@"sortBy"] ascending:[[NSUserDefaults standardUserDefaults] boolForKey:@"sortAscending"] option:option];
-//}
-
 #pragma mark - Box Popup and Popover
 
 - (IBAction)showAddBoxPopOver:(id)sender {

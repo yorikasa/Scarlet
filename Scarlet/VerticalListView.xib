@@ -414,7 +414,7 @@
             </constraints>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="EFM-a7-AUj"/>
-        <arrayController mode="entity" entityName="Entry" automaticallyPreparesContent="YES" id="tXk-At-IER" userLabel="Entries">
+        <arrayController mode="entity" entityName="Entry" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="tXk-At-IER" userLabel="Entries">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="6M4-xp-ccA"/>
             </connections>
