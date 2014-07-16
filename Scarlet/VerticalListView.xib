@@ -337,7 +337,7 @@
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5j-mb-6Y5">
                                             <rect key="frame" x="137" y="33" width="37" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="roundTextured" title="Tags" bezelStyle="texturedRounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CfT-cN-Mgo">
+                                            <buttonCell key="cell" type="roundTextured" title="Tags" bezelStyle="texturedRounded" image="tag" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CfT-cN-Mgo">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -590,5 +590,6 @@
     </objects>
     <resources>
         <image name="check" width="24" height="14"/>
+        <image name="tag" width="16" height="16"/>
     </resources>
 </document>

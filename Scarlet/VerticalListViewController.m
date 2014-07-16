@@ -70,7 +70,7 @@ int gIsEditing = 0;
 
 - (IBAction)showTagsPopOver:(id)sender {
     [[_tagTableViewController searchField] setStringValue:@""];
-    [[_tagTableViewController tagTableView] reloadData];
+    [_tagTableViewController controlTextDidChange:nil];
     [[_tagTableViewController tagsPopOver] showRelativeToRect:[_tagsButton bounds] ofView:_tagsButton preferredEdge:NSMaxYEdge];
 }
 

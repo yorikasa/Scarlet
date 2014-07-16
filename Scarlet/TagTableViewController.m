@@ -34,6 +34,8 @@
     _searchTagPredicate = [NSPredicate predicateWithFormat:@"name contains[cd] $value"];
 }
 
+#pragma mark - Table View Delegate & Data Source
+
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     TagCellView *cell = [tableView makeViewWithIdentifier:@"TagView" owner:self];
 
@@ -61,6 +63,8 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView{
     return [[_tagArrayController arrangedObjects] count];
 }
+
+#pragma mark - 
 
 - (IBAction)toggleTagState:(id)sender {
     Entry *entry;
