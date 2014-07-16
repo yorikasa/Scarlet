@@ -30,7 +30,6 @@
 		B686279517A3C2D3008A5D3C /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = B686279417A3C2D3008A5D3C /* Box.m */; };
 		B686279817A3D4D1008A5D3C /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B686279717A3D4D1008A5D3C /* Entry.m */; };
 		B68627AA17B37A61008A5D3C /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68627A917B37A61008A5D3C /* TableController.m */; };
-		B68A7B2C19744EAF00047460 /* HoverTagTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68A7B2B19744EAF00047460 /* HoverTagTableRowView.m */; };
 		B68A7B341974B65C00047460 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = B68A7B331974B65C00047460 /* check.png */; };
 		B68A7B371974BA5800047460 /* TagTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68A7B361974BA5800047460 /* TagTableView.m */; };
 		B69CD6701964405C0028F4DC /* VerticalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD66F1964405C0028F4DC /* VerticalListView.xib */; };
@@ -85,8 +84,6 @@
 		B686279717A3D4D1008A5D3C /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		B68627A817B37A61008A5D3C /* TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableController.h; sourceTree = "<group>"; };
 		B68627A917B37A61008A5D3C /* TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableController.m; sourceTree = "<group>"; };
-		B68A7B2A19744EAF00047460 /* HoverTagTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoverTagTableRowView.h; sourceTree = "<group>"; };
-		B68A7B2B19744EAF00047460 /* HoverTagTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverTagTableRowView.m; sourceTree = "<group>"; };
 		B68A7B331974B65C00047460 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = images/check.png; sourceTree = SOURCE_ROOT; };
 		B68A7B351974BA5800047460 /* TagTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableView.h; sourceTree = "<group>"; };
 		B68A7B361974BA5800047460 /* TagTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableView.m; sourceTree = "<group>"; };
@@ -251,8 +248,6 @@
 				B655D6F3197414550023E422 /* TagTableViewController.m */,
 				B655D6EF1974126E0023E422 /* TagCellView.h */,
 				B655D6F01974126E0023E422 /* TagCellView.m */,
-				B68A7B2A19744EAF00047460 /* HoverTagTableRowView.h */,
-				B68A7B2B19744EAF00047460 /* HoverTagTableRowView.m */,
 				B68A7B351974BA5800047460 /* TagTableView.h */,
 				B68A7B361974BA5800047460 /* TagTableView.m */,
 			);
@@ -363,7 +358,6 @@
 				B642FAD5179E912C00B7F537 /* main.m in Sources */,
 				B642FADC179E912C00B7F537 /* ScarletAppDelegate.m in Sources */,
 				B642FAE2179E912D00B7F537 /* Scarlet.xcdatamodeld in Sources */,
-				B68A7B2C19744EAF00047460 /* HoverTagTableRowView.m in Sources */,
 				B674B8941963D1FB001D2149 /* VerticalListViewController.m in Sources */,
 				B69CD675196441120028F4DC /* ExpandedViewController.m in Sources */,
 				B68A7B371974BA5800047460 /* TagTableView.m in Sources */,
