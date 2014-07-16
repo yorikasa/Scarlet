@@ -30,7 +30,7 @@
             <rect key="frame" x="0.0" y="0.0" width="925" height="676"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gt-eq-cYf">
+                <splitView autosaveName="verticalListSplitView" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gt-eq-cYf">
                     <rect key="frame" x="0.0" y="0.0" width="925" height="676"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
@@ -256,10 +256,10 @@
                                             </connections>
                                         </button>
                                         <popUpButton verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="2gi-HZ-6Ij">
-                                            <rect key="frame" x="10" y="33" width="119" height="19"/>
+                                            <rect key="frame" x="10" y="33" width="100" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="4b9-c0-n8o"/>
+                                                <constraint firstAttribute="width" constant="100" id="4b9-c0-n8o"/>
                                             </constraints>
                                             <popUpButtonCell key="cell" type="roundTextured" title="Inbox" bezelStyle="texturedRounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" tag="1" imageScaling="proportionallyDown" inset="2" selectedItem="nbl-Cp-2jA" id="RHP-nD-dsj">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -291,7 +291,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="5Fa-Dk-Itg">
-                                            <rect key="frame" x="390" y="36" width="115" height="14"/>
+                                            <rect key="frame" x="371" y="36" width="115" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Yesterday, 11:17 AM" usesSingleLineMode="YES" id="YTS-L5-TuZ">
                                                 <dateFormatter key="formatter" dateStyle="short" timeStyle="short" doesRelativeDateFormatting="YES" id="St1-w9-TuO"/>
@@ -304,7 +304,7 @@
                                             </connections>
                                         </textField>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Ftw-T5-G2P">
-                                            <rect key="frame" x="338" y="36" width="51" height="14"/>
+                                            <rect key="frame" x="319" y="36" width="51" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Modified" id="h0a-6v-05H">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -313,7 +313,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-OP-5cb">
-                                            <rect key="frame" x="227" y="36" width="95" height="14"/>
+                                            <rect key="frame" x="208" y="36" width="95" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Today, 11:17 AM" usesSingleLineMode="YES" id="Dbq-Ew-5d1">
                                                 <dateFormatter key="formatter" dateStyle="short" timeStyle="short" doesRelativeDateFormatting="YES" id="RLW-uS-Cr7"/>
@@ -326,7 +326,7 @@
                                             </connections>
                                         </textField>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="sTm-YY-bon">
-                                            <rect key="frame" x="180" y="36" width="46" height="14"/>
+                                            <rect key="frame" x="161" y="36" width="46" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Created" id="9s9-HF-ocK">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -335,7 +335,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5j-mb-6Y5">
-                                            <rect key="frame" x="137" y="33" width="37" height="19"/>
+                                            <rect key="frame" x="118" y="33" width="37" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="roundTextured" title="Tags" bezelStyle="texturedRounded" image="tag" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CfT-cN-Mgo">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
