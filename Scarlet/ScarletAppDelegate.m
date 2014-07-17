@@ -51,6 +51,11 @@
     [defaults setObject:@"LucidaGrande" forKey:DefaultEditorFontName];
     [defaults setObject:@13 forKey:DefaultEditorFontSize];
 
+    NSData *foregroundColorAsData = [NSArchiver archivedDataWithRootObject:[NSColor blackColor]];
+    [defaults setObject:foregroundColorAsData forKey:DefaultEditorForegroundColor];
+    NSData *backgroundColorAsData = [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]];
+    [defaults setObject:backgroundColorAsData forKey:DefaultEditorBackgroundColor];
+
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 

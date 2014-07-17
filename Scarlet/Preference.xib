@@ -11,6 +11,7 @@
                 <outlet property="fontTextField" destination="DfW-He-1BN" id="uOd-1x-Ima"/>
                 <outlet property="foregroundColorWell" destination="iCp-qF-9Pw" id="sAk-qM-9p4"/>
                 <outlet property="tabView" destination="nhs-wn-kQB" id="WxI-Lb-1xE"/>
+                <outlet property="toolbar" destination="crd-Fk-c07" id="YTh-fA-Lxi"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -18,14 +19,14 @@
         <customObject id="-3" userLabel="Application"/>
         <window title="Preference" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="452" height="122"/>
+            <windowPositionMask key="initialPositionMask" topStrut="YES"/>
+            <rect key="contentRect" x="649" y="600" width="452" height="122"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="452" height="122"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <tabView drawsBackground="NO" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="nhs-wn-kQB">
+                    <tabView drawsBackground="NO" type="noTabsNoBorder" initialItem="Gzk-tz-2SX" translatesAutoresizingMaskIntoConstraints="NO" id="nhs-wn-kQB">
                         <rect key="frame" x="0.0" y="0.0" width="452" height="122"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
@@ -73,6 +74,9 @@
                                                 <constraint firstAttribute="height" constant="23" id="lko-25-gl3"/>
                                             </constraints>
                                             <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="changeBackgroundColor:" target="-2" id="hNu-Se-ulF"/>
+                                            </connections>
                                         </colorWell>
                                         <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="iCp-qF-9Pw">
                                             <rect key="frame" x="146" y="48" width="44" height="23"/>
@@ -82,6 +86,9 @@
                                                 <constraint firstAttribute="height" constant="23" id="pTH-Hm-PXC"/>
                                             </constraints>
                                             <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="changeForegroundColor:" target="-2" id="A17-lN-sXG"/>
+                                            </connections>
                                         </colorWell>
                                         <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="DfW-He-1BN">
                                             <rect key="frame" x="146" y="80" width="200" height="22"/>
@@ -131,7 +138,7 @@
                             </tabViewItem>
                             <tabViewItem label="Style" identifier="style" id="Maq-6b-fBF">
                                 <view key="view" id="M9G-Ud-2t5">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="452" height="122"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </tabViewItem>
@@ -147,8 +154,6 @@
             </view>
             <toolbar key="toolbar" implicitIdentifier="07A66868-D8AC-43EB-896A-BA06FFB1587F" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="crd-Fk-c07">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="xxE-Zc-RCd"/>
-                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ceQ-iL-0xs"/>
                     <toolbarItem implicitItemIdentifier="566DDEB2-45CB-4017-83FE-BAED8BA81339" explicitItemIdentifier="editor" label="Editor" paletteLabel="Editor" tag="-1" image="NSAddTemplate" selectable="YES" id="Ouc-4V-YWh">
                         <connections>
                             <action selector="showTab:" target="-2" id="1De-LG-0Ne"/>

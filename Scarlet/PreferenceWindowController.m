@@ -38,7 +38,6 @@ NSString * const NotificationEditorFontChanged = @"EditorFontChanged";
     }
     // Load defaults
     _defaults = [NSUserDefaults standardUserDefaults];
-
     return self;
 }
 
@@ -47,12 +46,24 @@ NSString * const NotificationEditorFontChanged = @"EditorFontChanged";
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    [_toolbar setSelectedItemIdentifier:@"editor"];
 
+    // Load font defaults
     NSString *fontName = [_defaults objectForKey:DefaultEditorFontName];
     NSNumber *fontSize = [_defaults objectForKey:DefaultEditorFontSize];
     NSFont *font = [NSFont fontWithName:fontName size:[fontSize intValue]];
     [_fontTextField setStringValue:[NSString stringWithFormat:@"%@, %ipt", [font displayName], (int)[font pointSize]]];
+
+    // Load color defaults
+    NSData *foregroundColorAsData = [_defaults objectForKey:DefaultEditorForegroundColor];
+    NSColor *foregroundColor = [NSUnarchiver unarchiveObjectWithData:foregroundColorAsData];
+    [_foregroundColorWell setColor:foregroundColor];
+    NSData *backgroundColorAsData = [_defaults objectForKey:DefaultEditorBackgroundColor];
+    NSColor *backgroundColor = [NSUnarchiver unarchiveObjectWithData:backgroundColorAsData];
+    [_backgroundColorWell setColor:backgroundColor];
 }
+
+#pragma mark - Font settings
 
 - (IBAction)showTab:(id)sender {
     [_tabView selectTabViewItemWithIdentifier:[[sender label] lowercaseString]];
@@ -62,7 +73,6 @@ NSString * const NotificationEditorFontChanged = @"EditorFontChanged";
     [[NSFontManager sharedFontManager] setAction:@selector(changeEditorFont:)];
     [[NSFontManager sharedFontManager] orderFrontFontPanel:self];
 }
-
 
 - (void)changeEditorFont:(id)sender{
     NSString *oldName = [_defaults objectForKey:DefaultEditorFontName];
@@ -81,4 +91,28 @@ NSString * const NotificationEditorFontChanged = @"EditorFontChanged";
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc postNotificationName:NotificationEditorFontChanged object:self];
 }
+
+#pragma mark - Color settings
+
+- (IBAction)changeForegroundColor:(id)sender {
+    NSData *colorAsData = [NSArchiver archivedDataWithRootObject:[_foregroundColorWell color]];
+    [_defaults setObject:colorAsData forKey:DefaultEditorForegroundColor];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:NotificationEditorFontChanged object:self];
+}
+
+- (IBAction)changeBackgroundColor:(id)sender {
+    NSData *colorAsData = [NSArchiver archivedDataWithRootObject:[_backgroundColorWell color]];
+    [_defaults setObject:colorAsData forKey:DefaultEditorBackgroundColor];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:NotificationEditorFontChanged object:self];
+}
+
+
+
+
+
+
+
+
 @end

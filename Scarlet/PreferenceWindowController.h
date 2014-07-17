@@ -22,6 +22,8 @@ extern NSString * const NotificationEditorFontChanged;
 #pragma mark - Actions
 - (IBAction)showTab:(id)sender;
 - (IBAction)showFontPanel:(id)sender;
+- (IBAction)changeForegroundColor:(id)sender;
+- (IBAction)changeBackgroundColor:(id)sender;
 
 
 #pragma mark - IBOutlets
@@ -29,6 +31,7 @@ extern NSString * const NotificationEditorFontChanged;
 @property (weak) IBOutlet NSColorWell *foregroundColorWell;
 @property (weak) IBOutlet NSColorWell *backgroundColorWell;
 @property (weak) IBOutlet NSTextField *fontTextField;
+@property (weak) IBOutlet NSToolbar *toolbar;
 
 
 @end

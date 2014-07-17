@@ -46,9 +46,13 @@ int gIsEditing = 0;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [NSFont setUserFont:[NSFont fontWithName:[defaults objectForKey:DefaultEditorFontName] size:[[defaults objectForKey:DefaultEditorFontSize] intValue]]];
         [_editorTextView setFont:[NSFont userFontOfSize:0.0]];
-        [_editorTextView setTextColor:[NSColor darkGrayColor]];
-        [_editorTextView setBackgroundColor:[NSColor whiteColor]];
 
+        NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorForegroundColor]];
+        NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorBackgroundColor]];
+        [_editorTextView setTextColor:textColor];
+        [_editorTextView setBackgroundColor:backColor];
+
+        // and Notification...
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(reloadTextView:) name:NotificationEditorFontChanged object:nil];
     }
@@ -75,6 +79,12 @@ int gIsEditing = 0;
     [self didChangeValueForKey:@"isEditState"];
     [self loadHTMLWithStyle];
     [_editorTextView setFont:[NSFont userFontOfSize:0.0]];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorForegroundColor]];
+    NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorBackgroundColor]];
+    [_editorTextView setTextColor:textColor];
+    [_editorTextView setBackgroundColor:backColor];
 }
 
 #pragma mark - Tags Button
@@ -129,6 +139,11 @@ int gIsEditing = 0;
 - (void)reloadTextView:(NSNotification *)note{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [_editorTextView setFont:[NSFont fontWithName:[defaults objectForKey:DefaultEditorFontName] size:[[defaults objectForKey:DefaultEditorFontSize] intValue]]];
+
+    NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorForegroundColor]];
+    NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorBackgroundColor]];
+    [_editorTextView setTextColor:textColor];
+    [_editorTextView setBackgroundColor:backColor];
 }
 
 #pragma mark -
