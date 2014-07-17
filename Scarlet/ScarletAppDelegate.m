@@ -44,6 +44,16 @@
     [self prepareSort];
 }
 
++ (void)initialize{
+    // Set factory defaults
+    NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
+
+    [defaults setObject:@"LucidaGrande" forKey:DefaultEditorFontName];
+    [defaults setObject:@13 forKey:DefaultEditorFontSize];
+
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+}
+
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.yorikasa.Scarlet" in the user's Application Support directory.
 - (NSURL *)applicationFilesDirectory
 {

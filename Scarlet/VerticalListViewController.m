@@ -14,6 +14,7 @@
 #import "libMultiMarkdown.h"
 #import "TagCellView.h"
 #import "TagTableViewController.h"
+#import "PreferenceWindowController.h"
 
 @interface VerticalListViewController ()
 
@@ -42,9 +43,14 @@ int gIsEditing = 0;
         [_editButton setState:0];
         _isEditState = 0;
 
-//        [_editorTextView setFont:[NSFont fontWithName:@"Lucida Grande" size:16]];
-//        [_editorTextView setTextColor:[NSColor redColor]];
-//        [_editorTextView setBackgroundColor:[NSColor blackColor]];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [NSFont setUserFont:[NSFont fontWithName:[defaults objectForKey:DefaultEditorFontName] size:[[defaults objectForKey:DefaultEditorFontSize] intValue]]];
+        [_editorTextView setFont:[NSFont userFontOfSize:0.0]];
+        [_editorTextView setTextColor:[NSColor darkGrayColor]];
+        [_editorTextView setBackgroundColor:[NSColor whiteColor]];
+
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(reloadTextView:) name:NotificationEditorFontChanged object:nil];
     }
     return self;
 }
@@ -68,6 +74,7 @@ int gIsEditing = 0;
     }
     [self didChangeValueForKey:@"isEditState"];
     [self loadHTMLWithStyle];
+    [_editorTextView setFont:[NSFont userFontOfSize:0.0]];
 }
 
 #pragma mark - Tags Button
@@ -115,6 +122,13 @@ int gIsEditing = 0;
 - (void)appendCustomBoxMenuItems{
     [[_boxPopUpButton menu] addItem:[NSMenuItem separatorItem]];
     [[_boxPopUpButton menu] addItem:[[NSMenuItem alloc] initWithTitle:@"Add New Box..." action:NULL keyEquivalent:@""]];
+}
+
+#pragma mark - Editor
+
+- (void)reloadTextView:(NSNotification *)note{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [_editorTextView setFont:[NSFont fontWithName:[defaults objectForKey:DefaultEditorFontName] size:[[defaults objectForKey:DefaultEditorFontSize] intValue]]];
 }
 
 #pragma mark -

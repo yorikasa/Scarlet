@@ -205,7 +205,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView importsGraphics="NO" richText="NO" findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx">
+                                            <textView importsGraphics="NO" findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx">
                                                 <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -215,7 +215,11 @@
                                                 <size key="minSize" width="556" height="614"/>
                                                 <size key="maxSize" width="556" height="10000000"/>
                                                 <connections>
-                                                    <binding destination="tXk-At-IER" name="value" keyPath="selection.content" id="2n3-x0-Bri"/>
+                                                    <binding destination="tXk-At-IER" name="attributedString" keyPath="selection.content" id="LyR-wx-grS">
+                                                        <dictionary key="options">
+                                                            <string key="NSValueTransformerName">ToAttributedString</string>
+                                                        </dictionary>
+                                                    </binding>
                                                 </connections>
                                             </textView>
                                         </subviews>
@@ -229,11 +233,18 @@
                                         <rect key="frame" x="540" y="0.0" width="16" height="614"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
+                                    <connections>
+                                        <binding destination="-2" name="hidden" keyPath="self.isEditState" id="4ba-vl-Dsm">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
                                 </scrollView>
                                 <webView verticalCompressionResistancePriority="749" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knw-2L-RWU">
                                     <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaScriptCanOpenWindowsAutomatically="NO">
+                                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
                                         <nil key="identifier"/>
                                     </webPreferences>
                                     <connections>

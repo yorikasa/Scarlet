@@ -10,6 +10,14 @@
 
 @interface PreferenceWindowController : NSWindowController
 
+#pragma mark - (Global) Variables
+extern NSString * const DefaultEditorFontName;
+extern NSString * const DefaultEditorFontSize;
+extern NSString * const DefaultEditorForegroundColor;
+extern NSString * const DefaultEditorBackgroundColor;
+
+extern NSString * const NotificationEditorFontChanged;
+
 
 #pragma mark - Actions
 - (IBAction)showTab:(id)sender;
