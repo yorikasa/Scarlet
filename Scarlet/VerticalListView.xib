@@ -154,7 +154,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView importsGraphics="NO" findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx">
+                                            <textView findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx">
                                                 <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,9 +164,9 @@
                                                 <size key="minSize" width="556" height="614"/>
                                                 <size key="maxSize" width="556" height="10000000"/>
                                                 <connections>
-                                                    <binding destination="tXk-At-IER" name="attributedString" keyPath="selection.content" id="LyR-wx-grS">
+                                                    <binding destination="tXk-At-IER" name="attributedString" keyPath="selection.content" id="2IY-vm-ty0">
                                                         <dictionary key="options">
-                                                            <string key="NSValueTransformerName">ToAttributedString</string>
+                                                            <string key="NSValueTransformerName">NSKeyedUnarchiveFromData</string>
                                                         </dictionary>
                                                     </binding>
                                                 </connections>

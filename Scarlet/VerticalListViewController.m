@@ -152,8 +152,10 @@ int gIsEditing = 0;
     NSString *html;
     NSArray *selected = [_entryArrayController selectedObjects];
     if ([selected count] == 1) {
-        if ([(Entry *)selected[0] content]) {
-            html = @(markdown_to_string((char *)[[(Entry *)selected[0] content] UTF8String], EXT_NOTES + EXT_NO_METADATA,0));
+        NSData *contentData = [(Entry *)selected[0] content];
+        if (contentData) {
+            NSString *content = [[NSKeyedUnarchiver unarchiveObjectWithData:contentData] string];
+            html = @(markdown_to_string((char *)[content UTF8String], EXT_NOTES + EXT_NO_METADATA,0));
         }
     }
     NSString *style = @"<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />";
