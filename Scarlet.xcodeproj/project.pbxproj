@@ -28,6 +28,8 @@
 		B681359619762FE5006BBF69 /* PreferenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B681359419762FE5006BBF69 /* PreferenceWindowController.m */; };
 		B681359719762FE5006BBF69 /* Preference.xib in Resources */ = {isa = PBXBuildFile; fileRef = B681359519762FE5006BBF69 /* Preference.xib */; };
 		B681359A1977F128006BBF69 /* ToAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = B68135991977F128006BBF69 /* ToAttributedString.m */; };
+		B681359D19793B32006BBF69 /* EditorTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B681359C19793B32006BBF69 /* EditorTextView.m */; };
+		B68135A0197966BC006BBF69 /* HTMLWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B681359F197966BC006BBF69 /* HTMLWebView.m */; };
 		B686279517A3C2D3008A5D3C /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = B686279417A3C2D3008A5D3C /* Box.m */; };
 		B686279817A3D4D1008A5D3C /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B686279717A3D4D1008A5D3C /* Entry.m */; };
 		B68627AA17B37A61008A5D3C /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68627A917B37A61008A5D3C /* TableController.m */; };
@@ -80,6 +82,10 @@
 		B681359519762FE5006BBF69 /* Preference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preference.xib; sourceTree = "<group>"; };
 		B68135981977F128006BBF69 /* ToAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToAttributedString.h; sourceTree = "<group>"; };
 		B68135991977F128006BBF69 /* ToAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToAttributedString.m; sourceTree = "<group>"; };
+		B681359B19793B32006BBF69 /* EditorTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorTextView.h; sourceTree = "<group>"; };
+		B681359C19793B32006BBF69 /* EditorTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorTextView.m; sourceTree = "<group>"; };
+		B681359E197966BC006BBF69 /* HTMLWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLWebView.h; sourceTree = "<group>"; };
+		B681359F197966BC006BBF69 /* HTMLWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLWebView.m; sourceTree = "<group>"; };
 		B686279217A3C1D5008A5D3C /* Scarlet 3.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "Scarlet 3.xcdatamodel"; sourceTree = "<group>"; };
 		B686279317A3C2D3008A5D3C /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		B686279417A3C2D3008A5D3C /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
@@ -116,6 +122,10 @@
 				B69CD66F1964405C0028F4DC /* VerticalListView.xib */,
 				B674B8911963D1FB001D2149 /* VerticalListViewController.h */,
 				B674B8921963D1FB001D2149 /* VerticalListViewController.m */,
+				B681359B19793B32006BBF69 /* EditorTextView.h */,
+				B681359C19793B32006BBF69 /* EditorTextView.m */,
+				B681359E197966BC006BBF69 /* HTMLWebView.h */,
+				B681359F197966BC006BBF69 /* HTMLWebView.m */,
 				B655D6E919728C5F0023E422 /* DetailInfoView.h */,
 				B655D6EA19728C5F0023E422 /* DetailInfoView.m */,
 				B68A7B2D1974AA7F00047460 /* Tag Table View */,
@@ -362,6 +372,7 @@
 				B681359619762FE5006BBF69 /* PreferenceWindowController.m in Sources */,
 				B642FAD5179E912C00B7F537 /* main.m in Sources */,
 				B642FADC179E912C00B7F537 /* ScarletAppDelegate.m in Sources */,
+				B68135A0197966BC006BBF69 /* HTMLWebView.m in Sources */,
 				B642FAE2179E912D00B7F537 /* Scarlet.xcdatamodeld in Sources */,
 				B674B8941963D1FB001D2149 /* VerticalListViewController.m in Sources */,
 				B69CD675196441120028F4DC /* ExpandedViewController.m in Sources */,
@@ -377,6 +388,7 @@
 				B655D6E8197268370023E422 /* SetToString.m in Sources */,
 				B655D6EB19728C5F0023E422 /* DetailInfoView.m in Sources */,
 				B6257AAB19629136007DDD98 /* HTMLTransformer.m in Sources */,
+				B681359D19793B32006BBF69 /* EditorTextView.m in Sources */,
 				B681359A1977F128006BBF69 /* ToAttributedString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

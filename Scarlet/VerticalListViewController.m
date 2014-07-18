@@ -55,6 +55,9 @@ int gIsEditing = 0;
         // and Notification...
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(reloadTextView:) name:NotificationEditorFontChanged object:nil];
+
+        [_htmlWebView unregisterDraggedTypes];
+        [[_htmlWebView superview] unregisterDraggedTypes];
     }
     return self;
 }
@@ -93,6 +96,20 @@ int gIsEditing = 0;
     [[_tagTableViewController searchField] setStringValue:@""];
     [_tagTableViewController controlTextDidChange:nil];
     [[_tagTableViewController tagsPopOver] showRelativeToRect:[_tagsButton bounds] ofView:_tagsButton preferredEdge:NSMaxYEdge];
+}
+
+#pragma mark - Edit Button
+
+- (IBAction)clickEdit:(id)sender {
+    switch ([sender state]) {
+        case 0:{ // Editor to Viewer
+            [self loadHTMLWithStyle];;
+            break;
+        }case 1:{ // Viewer to Editor
+            ;
+            break;
+        }
+    }
 }
 
 #pragma mark - Box Popup and Popover

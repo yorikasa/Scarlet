@@ -147,6 +147,16 @@
                             <rect key="frame" x="369" y="0.0" width="556" height="676"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
+                                <webView verticalCompressionResistancePriority="749" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knw-2L-RWU" customClass="HTMLWebView">
+                                    <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
+                                        <nil key="identifier"/>
+                                    </webPreferences>
+                                    <connections>
+                                        <binding destination="-2" name="hidden" keyPath="self.isEditState" id="v71-J6-2pn"/>
+                                    </connections>
+                                </webView>
                                 <scrollView verticalCompressionResistancePriority="749" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZx-Cb-6X4">
                                     <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -154,7 +164,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx">
+                                            <textView findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" allowsImageEditing="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx" customClass="EditorTextView">
                                                 <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,16 +200,6 @@
                                         </binding>
                                     </connections>
                                 </scrollView>
-                                <webView verticalCompressionResistancePriority="749" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knw-2L-RWU">
-                                    <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
-                                        <nil key="identifier"/>
-                                    </webPreferences>
-                                    <connections>
-                                        <binding destination="-2" name="hidden" keyPath="self.isEditState" id="v71-J6-2pn"/>
-                                    </connections>
-                                </webView>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="PZk-5z-7Rg" userLabel="Detail Info View" customClass="DetailInfoView">
                                     <rect key="frame" x="0.0" y="614" width="556" height="62"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -210,8 +210,13 @@
                                             <buttonCell key="cell" type="roundTextured" title="Edit" bezelStyle="texturedRounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Po4-Kj-scR">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
+                                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                             </buttonCell>
                                             <connections>
+                                                <action selector="clickEdit:" target="-2" id="iU5-IR-cyP"/>
                                                 <binding destination="-2" name="value" keyPath="self.isEditState" id="UX5-0i-KVO"/>
                                             </connections>
                                         </button>
@@ -297,7 +302,7 @@
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5j-mb-6Y5" userLabel="Tags Button">
                                             <rect key="frame" x="118" y="34" width="37" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="roundTextured" title="Tags" bezelStyle="texturedRounded" image="tag" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CfT-cN-Mgo">
+                                            <buttonCell key="cell" type="roundTextured" title="Tags" bezelStyle="texturedRounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CfT-cN-Mgo">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -561,6 +566,5 @@
     </objects>
     <resources>
         <image name="check" width="24" height="14"/>
-        <image name="tag" width="16" height="16"/>
     </resources>
 </document>

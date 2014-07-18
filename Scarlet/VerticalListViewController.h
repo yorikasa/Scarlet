@@ -41,6 +41,7 @@
 - (IBAction)addBox:(id)sender;
 - (IBAction)showAddBoxPopOver:(id)sender;
 - (IBAction)showTagsPopOver:(id)sender;
+- (IBAction)clickEdit:(id)sender;
 
 
 @end
