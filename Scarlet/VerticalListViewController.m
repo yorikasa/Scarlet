@@ -20,7 +20,9 @@
 
 @end
 
-@implementation VerticalListViewController
+@implementation VerticalListViewController{
+    NSUserDefaults *_defaults;
+}
 
 int gIsEditing = 0;
 
@@ -43,21 +45,19 @@ int gIsEditing = 0;
         [_editButton setState:0];
         _isEditState = 0;
 
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [NSFont setUserFont:[NSFont fontWithName:[defaults objectForKey:DefaultEditorFontName] size:[[defaults objectForKey:DefaultEditorFontSize] intValue]]];
+        _defaults = [NSUserDefaults standardUserDefaults];
+        [NSFont setUserFont:[NSFont fontWithName:[_defaults objectForKey:DefaultEditorFontName] size:[[_defaults objectForKey:DefaultEditorFontSize] intValue]]];
         [_editorTextView setFont:[NSFont userFontOfSize:0.0]];
 
-        NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorForegroundColor]];
-        NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorBackgroundColor]];
+        NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorForegroundColor]];
+        NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorBackgroundColor]];
         [_editorTextView setTextColor:textColor];
         [_editorTextView setBackgroundColor:backColor];
 
         // and Notification...
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(reloadTextView:) name:NotificationEditorFontChanged object:nil];
-
-        [_htmlWebView unregisterDraggedTypes];
-        [[_htmlWebView superview] unregisterDraggedTypes];
+        [nc addObserver:self selector:@selector(keepFont:) name:NSTextDidChangeNotification object:_editorTextView];
     }
     return self;
 }
@@ -83,9 +83,8 @@ int gIsEditing = 0;
     [self loadHTMLWithStyle];
     [_editorTextView setFont:[NSFont userFontOfSize:0.0]];
 
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorForegroundColor]];
-    NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorBackgroundColor]];
+    NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorForegroundColor]];
+    NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorBackgroundColor]];
     [_editorTextView setTextColor:textColor];
     [_editorTextView setBackgroundColor:backColor];
 }
@@ -103,6 +102,9 @@ int gIsEditing = 0;
 - (IBAction)clickEdit:(id)sender {
     switch ([sender state]) {
         case 0:{ // Editor to Viewer
+//            if (![[_entryArrayController selectedObjects][0] title]) {
+//                [[_entryArrayController selectedObjects][0] setTitle:[[[_entryArrayController selectedObjects][0] content] substringToIndex:10]];
+//            }
             [self loadHTMLWithStyle];;
             break;
         }case 1:{ // Viewer to Editor
@@ -154,13 +156,16 @@ int gIsEditing = 0;
 #pragma mark - Editor
 
 - (void)reloadTextView:(NSNotification *)note{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [_editorTextView setFont:[NSFont fontWithName:[defaults objectForKey:DefaultEditorFontName] size:[[defaults objectForKey:DefaultEditorFontSize] intValue]]];
+    [_editorTextView setFont:[NSFont fontWithName:[_defaults objectForKey:DefaultEditorFontName] size:[[_defaults objectForKey:DefaultEditorFontSize] intValue]]];
 
-    NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorForegroundColor]];
-    NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:DefaultEditorBackgroundColor]];
+    NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorForegroundColor]];
+    NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorBackgroundColor]];
     [_editorTextView setTextColor:textColor];
     [_editorTextView setBackgroundColor:backColor];
+}
+
+- (void)keepFont:(NSNotification *)note{
+    [_editorTextView setFont:[NSFont userFontOfSize:0.0]];
 }
 
 #pragma mark -

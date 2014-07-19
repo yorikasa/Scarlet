@@ -24,7 +24,7 @@
     [super awakeFromInsert];
     [self setDateCreated:[NSDate date]];
     [self setDateModified:[NSDate date]];
-    [self setTitle:@"Untitledee"];
+    [self setTitle:nil];
     
     // Find "Inbox" box and set it to self.box
     [self setBox:[self inbox]];
