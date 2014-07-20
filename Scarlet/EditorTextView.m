@@ -8,9 +8,7 @@
 
 #import "EditorTextView.h"
 
-@implementation EditorTextView{
-    BOOL isUnregistered;
-}
+@implementation EditorTextView
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -22,8 +20,9 @@
 }
 
 - (void)awakeFromNib{
-    isUnregistered = NO;
-
+    [self setAutomaticQuoteSubstitutionEnabled:NO];
+    [self setAutomaticLinkDetectionEnabled:NO];
+    [self setAutomaticDashSubstitutionEnabled:NO];
 }
 
 - (void)drawRect:(NSRect)dirtyRect

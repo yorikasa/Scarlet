@@ -102,9 +102,15 @@ int gIsEditing = 0;
 - (IBAction)clickEdit:(id)sender {
     switch ([sender state]) {
         case 0:{ // Editor to Viewer
-//            if (![[_entryArrayController selectedObjects][0] title]) {
-//                [[_entryArrayController selectedObjects][0] setTitle:[[[_entryArrayController selectedObjects][0] content] substringToIndex:10]];
-//            }
+            if (![[_entryArrayController selectedObjects][0] title]) {
+                Entry *selected = [_entryArrayController selectedObjects][0];
+                NSString *content = [[NSKeyedUnarchiver unarchiveObjectWithData:[selected content]] string];
+                NSString *newTitle = [content componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]][0];
+                if ([newTitle length] > 50) {
+                    newTitle = [NSString stringWithFormat:@"%@...", [newTitle substringToIndex:50]];
+                }
+                [[_entryArrayController selectedObjects][0] setTitle:newTitle];
+            }
             [self loadHTMLWithStyle];;
             break;
         }case 1:{ // Viewer to Editor
