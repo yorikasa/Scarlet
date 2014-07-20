@@ -100,7 +100,7 @@ int gIsEditing = 0;
 #pragma mark - Edit Button
 
 - (IBAction)clickEdit:(id)sender {
-    switch ([sender state]) {
+    switch ((NSInteger)[sender state]) {
         case 0:{ // Editor to Viewer
             if (![[_entryArrayController selectedObjects][0] title]) {
                 Entry *selected = [_entryArrayController selectedObjects][0];
