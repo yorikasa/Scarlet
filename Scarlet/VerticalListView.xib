@@ -164,7 +164,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" allowsImageEditing="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx" customClass="EditorTextView">
+                                            <textView importsGraphics="NO" richText="NO" findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="LGd-Yb-4Bx" customClass="EditorTextView">
                                                 <rect key="frame" x="0.0" y="0.0" width="556" height="614"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,11 +174,7 @@
                                                 <size key="minSize" width="556" height="614"/>
                                                 <size key="maxSize" width="556" height="10000000"/>
                                                 <connections>
-                                                    <binding destination="tXk-At-IER" name="attributedString" keyPath="selection.content" id="2IY-vm-ty0">
-                                                        <dictionary key="options">
-                                                            <string key="NSValueTransformerName">NSKeyedUnarchiveFromData</string>
-                                                        </dictionary>
-                                                    </binding>
+                                                    <binding destination="tXk-At-IER" name="value" keyPath="selection.content" id="z8Z-i8-1ii"/>
                                                 </connections>
                                             </textView>
                                         </subviews>

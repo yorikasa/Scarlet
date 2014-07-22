@@ -5,7 +5,7 @@
         <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entry" inverseName="box" inverseEntity="Entry" syncable="YES"/>
     </entity>
     <entity name="Entry" representedClassName="Entry" syncable="YES">
-        <attribute name="content" optional="YES" attributeType="Binary" indexed="YES" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateModified" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
@@ -23,7 +23,7 @@
     </entity>
     <elements>
         <element name="Box" positionX="-335" positionY="117" width="128" height="73"/>
-        <element name="Entry" positionX="-560" positionY="72" width="128" height="150"/>
+        <element name="Entry" positionX="-560" positionY="72" width="128" height="148"/>
         <element name="Media" positionX="-450" positionY="99" width="128" height="73"/>
         <element name="Tag" positionX="-333" positionY="26" width="128" height="73"/>
     </elements>

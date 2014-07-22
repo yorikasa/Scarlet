@@ -13,7 +13,7 @@
 
 @interface Entry : NSManagedObject
 
-@property (nonatomic, retain) NSData * content;
+@property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSDate * dateCreated;
 @property (nonatomic, retain) NSDate * dateModified;
 @property (nonatomic, retain) NSString * title;

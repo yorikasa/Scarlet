@@ -104,7 +104,7 @@ int gIsEditing = 0;
         case 0:{ // Editor to Viewer
             if (![[_entryArrayController selectedObjects][0] title]) {
                 Entry *selected = [_entryArrayController selectedObjects][0];
-                NSString *content = [[NSKeyedUnarchiver unarchiveObjectWithData:[selected content]] string];
+                NSString *content = [selected content];
                 NSString *newTitle = [content componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]][0];
                 if ([newTitle length] > 50) {
                     newTitle = [NSString stringWithFormat:@"%@...", [newTitle substringToIndex:50]];
@@ -180,9 +180,8 @@ int gIsEditing = 0;
     NSString *html;
     NSArray *selected = [_entryArrayController selectedObjects];
     if ([selected count] == 1) {
-        NSData *contentData = [(Entry *)selected[0] content];
-        if (contentData) {
-            NSString *content = [[NSKeyedUnarchiver unarchiveObjectWithData:contentData] string];
+        NSString *content = [(Entry *)selected[0] content];
+        if (content) {
             html = @(markdown_to_string((char *)[content UTF8String], EXT_NOTES + EXT_NO_METADATA,0));
         }
     }
