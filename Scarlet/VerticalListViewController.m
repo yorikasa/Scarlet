@@ -80,6 +80,7 @@ int gIsEditing = 0;
     if ([[_entryArrayController selectedObjects] count] == 1) {
         if ([[(Entry *)[_entryArrayController selectedObjects][0] dateCreated] timeIntervalSinceNow] > -1){
             _isEditState = 1;
+            [[NSApp keyWindow] makeFirstResponder:_editorTextView];
         }else{
             [self loadHTMLWithStyle];
         }
@@ -94,6 +95,7 @@ int gIsEditing = 0;
     [[_tagTableViewController searchField] setStringValue:@""];
     [_tagTableViewController controlTextDidChange:nil];
     [[_tagTableViewController tagsPopOver] showRelativeToRect:[_tagsButton bounds] ofView:_tagsButton preferredEdge:NSMaxYEdge];
+    [[NSApp keyWindow] makeFirstResponder:[_tagTableViewController searchField]];
 }
 
 #pragma mark - Edit Button
@@ -145,7 +147,7 @@ int gIsEditing = 0;
             [self loadHTMLWithStyle];;
             break;
         }case 1:{ // Viewer to Editor
-            ;
+            [[NSApp keyWindow] makeFirstResponder:_editorTextView];
             break;
         }
     }
