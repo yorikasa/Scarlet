@@ -157,6 +157,8 @@
     return NO; // just in case.
 }
 
+#pragma mark -
+
 - (NSURL *)imageDirectoryURLForEntry{
     // Add this entry's creation date to directory name
     NSDate *entryDate = [[[[[NSApp delegate] verticalListViewController] entryArrayController] selectedObjects][0] dateCreated];

@@ -55,6 +55,8 @@
     [defaults setObject:foregroundColorAsData forKey:DefaultEditorForegroundColor];
     NSData *backgroundColorAsData = [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]];
     [defaults setObject:backgroundColorAsData forKey:DefaultEditorBackgroundColor];
+    NSData *insertionColorAsData = [NSArchiver archivedDataWithRootObject:[NSColor blackColor]];
+    [defaults setObject:insertionColorAsData forKey:DefaultEditorInsertionColor];
 
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }

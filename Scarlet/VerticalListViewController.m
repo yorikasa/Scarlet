@@ -52,8 +52,10 @@ int gIsEditing = 0;
 
         NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorForegroundColor]];
         NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorBackgroundColor]];
+        NSColor *insertColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorInsertionColor]];
         [_editorTextView setTextColor:textColor];
         [_editorTextView setBackgroundColor:backColor];
+        [_editorTextView setInsertionPointColor:insertColor];
 
         // and Notification...
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
@@ -195,8 +197,10 @@ int gIsEditing = 0;
 
     NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorForegroundColor]];
     NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorBackgroundColor]];
+    NSColor *insertColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorInsertionColor]];
     [_editorTextView setTextColor:textColor];
     [_editorTextView setBackgroundColor:backColor];
+    [_editorTextView setInsertionPointColor:insertColor];
 }
 
 - (void)keepFont:(NSNotification *)note{
