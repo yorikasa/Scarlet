@@ -13,7 +13,7 @@
         <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media" inverseName="entries" inverseEntity="Media" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="entries" inverseEntity="Tag" syncable="YES"/>
     </entity>
-    <entity name="Media" syncable="YES">
+    <entity name="Media" representedClassName="Media" syncable="YES">
         <attribute name="location" attributeType="String" syncable="YES"/>
         <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entry" inverseName="media" inverseEntity="Entry" syncable="YES"/>
     </entity>

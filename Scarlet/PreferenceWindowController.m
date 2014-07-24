@@ -108,6 +108,9 @@ NSString * const NotificationEditorFontChanged = @"EditorFontChanged";
     [nc postNotificationName:NotificationEditorFontChanged object:self];
 }
 
+- (IBAction)changeInsertionColor:(id)sender {
+}
+
 
 
 

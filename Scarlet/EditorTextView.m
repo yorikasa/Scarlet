@@ -10,6 +10,7 @@
 #import "ScarletAppDelegate.h"
 #import "VerticalListViewController.h"
 #import "Entry.h"
+#import "Media.h"
 
 @implementation EditorTextView
 
@@ -202,11 +203,18 @@
                 return NO;
             }
         }
-        return YES;
     }else{
         NSLog(@"not readable or writable");
+        return NO;
     }
-    return NO;
+    // Add Media Object!!!
+    Entry *entry = [[[[NSApp delegate] verticalListViewController] entryArrayController] selectedObjects][0];
+    NSManagedObjectContext *moc = [[NSApp delegate] managedObjectContext];
+    NSEntityDescription *mediaEntity = [NSEntityDescription entityForName:@"Media" inManagedObjectContext:moc];
+    Media *newMedia = [[Media alloc] initWithEntity:mediaEntity insertIntoManagedObjectContext:moc];
+    [newMedia setLocation:[destURL path]];
+    [newMedia addEntriesObject:entry];
+    return YES;
 }
 
 - (void)downloadImageToURL:(NSURL *)destURL FromURL:(NSURL *)srcURL{

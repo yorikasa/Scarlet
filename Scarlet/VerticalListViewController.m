@@ -11,6 +11,7 @@
 #import "Entry.h"
 #import "Box.h"
 #import "Tag.h"
+#import "Media.h"
 #import "libMultiMarkdown.h"
 #import "TagCellView.h"
 #import "TagTableViewController.h"
@@ -77,16 +78,12 @@ int gIsEditing = 0;
     if ([[_entryArrayController selectedObjects] count] == 1) {
         if ([[(Entry *)[_entryArrayController selectedObjects][0] dateCreated] timeIntervalSinceNow] > -1){
             _isEditState = 1;
+        }else{
+            [self loadHTMLWithStyle];
         }
     }
     [self didChangeValueForKey:@"isEditState"];
-    [self loadHTMLWithStyle];
     [_editorTextView setFont:[NSFont userFontOfSize:0.0]];
-
-    NSColor *textColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorForegroundColor]];
-    NSColor *backColor = [NSUnarchiver unarchiveObjectWithData:[_defaults objectForKey:DefaultEditorBackgroundColor]];
-    [_editorTextView setTextColor:textColor];
-    [_editorTextView setBackgroundColor:backColor];
 }
 
 #pragma mark - Tags Button
@@ -102,6 +99,7 @@ int gIsEditing = 0;
 - (IBAction)clickEdit:(id)sender {
     switch ((NSInteger)[sender state]) {
         case 0:{ // Editor to Viewer
+            // Set auto title
             if (![[_entryArrayController selectedObjects][0] title]) {
                 Entry *selected = [_entryArrayController selectedObjects][0];
                 NSString *content = [selected content];
@@ -110,6 +108,37 @@ int gIsEditing = 0;
                     newTitle = [NSString stringWithFormat:@"%@...", [newTitle substringToIndex:50]];
                 }
                 [[_entryArrayController selectedObjects][0] setTitle:newTitle];
+            }
+            // Media entity confirmation
+            NSSet *images = [(Entry *)[_entryArrayController selectedObjects][0] media];
+            NSMutableArray *imagesToDelete = [[NSMutableArray alloc] init];
+            Entry *entry = [_entryArrayController selectedObjects][0];
+            NSString *content = [entry content];
+            for (Media *image in images) {
+                NSURL *url = [NSURL fileURLWithPath:[image location]];
+                NSString *patternString = [NSString stringWithFormat:@"!\\[.*?\\]\\(%@\\)", [url absoluteString]];
+                NSError *error;
+                NSRegularExpression *imageLink = [NSRegularExpression regularExpressionWithPattern:patternString options:NSRegularExpressionCaseInsensitive error:&error];
+                if (error) {
+                    NSLog(@"SHIIIIIIIIIIIIIIIIIT: %@", error);
+                }
+                if (content) {
+                    if (![imageLink numberOfMatchesInString:content options:0 range:NSMakeRange(0, [content length])]) {
+                        // Shit! I cannot modify images set (look at forin loop expression!)
+                        NSLog(@"delete you!");
+                        [imagesToDelete addObject:image];
+                    }
+                }else{
+                    NSLog(@"delete you, anyway!");
+                    [imagesToDelete addObject:image];
+                }
+            }
+            int loopNum = (int)[imagesToDelete count];
+            NSManagedObjectContext *moc = [[NSApp delegate] managedObjectContext];
+            for (int i = 0; i < loopNum; i++) {
+                [entry removeMediaObject:imagesToDelete[i]];
+                [self removeItemAtURL:[NSURL fileURLWithPath:[(Media *)imagesToDelete[i] location]]];
+                [moc deleteObject:imagesToDelete[i]];
             }
             [self loadHTMLWithStyle];;
             break;
@@ -188,6 +217,25 @@ int gIsEditing = 0;
     NSString *style = @"<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />";
     NSString *newHTML = [NSString stringWithFormat:@"%@%@", style, html];
     [[_htmlWebView mainFrame] loadHTMLString:newHTML baseURL:[(ScarletAppDelegate *)[NSApp delegate] applicationFilesDirectory]];
+}
+
+- (BOOL)removeItemAtURL:(NSURL *)url{
+    NSError *error = nil;
+    NSURL *renamedURL;
+    [[NSFileManager defaultManager] trashItemAtURL:url resultingItemURL:&renamedURL error:&error];
+    if (error) {
+        NSLog(@"cannot write!, %@", error);
+        return NO;
+    }
+    else{
+        NSURL *parentDirectory = [url URLByDeletingLastPathComponent];
+        if ([[[NSFileManager defaultManager] contentsOfDirectoryAtURL:parentDirectory includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:&error] count] == 0) {
+            [[NSFileManager defaultManager] removeItemAtURL:parentDirectory error:&error];
+            return YES;
+        }else{
+            return NO;
+        }
+    }
 }
 
 

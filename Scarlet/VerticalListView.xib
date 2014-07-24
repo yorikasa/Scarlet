@@ -66,7 +66,7 @@
                                                         </textFieldCell>
                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         <prototypeCellViews>
-                                                            <tableCellView id="dIR-sp-dWg">
+                                                            <tableCellView wantsLayer="YES" id="dIR-sp-dWg">
                                                                 <rect key="frame" x="1" y="1" width="365" height="50"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>

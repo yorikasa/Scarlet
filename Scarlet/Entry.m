@@ -2,13 +2,14 @@
 //  Entry.m
 //  Scarlet
 //
-//  Created by Yuki Orikasa on 7/27/13.
-//  Copyright (c) 2013 Yuki Orikasa. All rights reserved.
+//  Created by Yuki Orikasa on 7/22/14.
+//  Copyright (c) 2014 Yuki Orikasa. All rights reserved.
 //
 
 #import "Entry.h"
 #import "Box.h"
-#import "ScarletAppDelegate.h"
+#import "Media.h"
+#import "Tag.h"
 
 
 @implementation Entry
@@ -18,6 +19,7 @@
 @dynamic dateModified;
 @dynamic title;
 @dynamic box;
+@dynamic media;
 @dynamic tags;
 
 - (void)awakeFromInsert{
@@ -25,7 +27,7 @@
     [self setDateCreated:[NSDate date]];
     [self setDateModified:[NSDate date]];
     [self setTitle:nil];
-    
+
     // Find "Inbox" box and set it to self.box
     [self setBox:[self inbox]];
 }
@@ -60,10 +62,7 @@
 #pragma mark -
 
 - (void)willSave{
-    
+
 }
-
-
-
 
 @end

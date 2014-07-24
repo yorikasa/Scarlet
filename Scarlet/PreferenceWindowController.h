@@ -15,6 +15,7 @@ extern NSString * const DefaultEditorFontName;
 extern NSString * const DefaultEditorFontSize;
 extern NSString * const DefaultEditorForegroundColor;
 extern NSString * const DefaultEditorBackgroundColor;
+extern NSString * const DefaultEditorInsertionColor;
 
 extern NSString * const NotificationEditorFontChanged;
 
@@ -24,14 +25,17 @@ extern NSString * const NotificationEditorFontChanged;
 - (IBAction)showFontPanel:(id)sender;
 - (IBAction)changeForegroundColor:(id)sender;
 - (IBAction)changeBackgroundColor:(id)sender;
+- (IBAction)changeInsertionColor:(id)sender;
 
 
 #pragma mark - IBOutlets
 @property (weak) IBOutlet NSTabView *tabView;
 @property (weak) IBOutlet NSColorWell *foregroundColorWell;
 @property (weak) IBOutlet NSColorWell *backgroundColorWell;
+@property (weak) IBOutlet NSColorWell *insertionColorWell;
 @property (weak) IBOutlet NSTextField *fontTextField;
 @property (weak) IBOutlet NSToolbar *toolbar;
+@property (unsafe_unretained) IBOutlet NSTextView *sampleTextField;
 
 
 @end
