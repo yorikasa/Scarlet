@@ -15,7 +15,6 @@
 		B642FAD9179E912C00B7F537 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B642FAD7179E912C00B7F537 /* Credits.rtf */; };
 		B642FADC179E912C00B7F537 /* ScarletAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B642FADB179E912C00B7F537 /* ScarletAppDelegate.m */; };
 		B642FADF179E912D00B7F537 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B642FADD179E912D00B7F537 /* MainMenu.xib */; };
-		B642FAE2179E912D00B7F537 /* Scarlet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B642FAE0179E912D00B7F537 /* Scarlet.xcdatamodeld */; };
 		B642FAF1179FF96400B7F537 /* libMultiMarkdown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B642FAF0179FF96400B7F537 /* libMultiMarkdown.a */; };
 		B642FB0517A265C700B7F537 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B642FB0417A265C700B7F537 /* WebKit.framework */; };
 		B655D6DB196FBDD80023E422 /* IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6DA196FBDD80023E422 /* IsEmpty.m */; };
@@ -37,6 +36,7 @@
 		B68ECF54197E9BDA003D4A33 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = B68ECF53197E9BDA003D4A33 /* Media.m */; };
 		B68ECF57197EAB4E003D4A33 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B68ECF56197EAB4E003D4A33 /* Entry.m */; };
 		B68ECF5A197EAE25003D4A33 /* AnyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B68ECF59197EAE25003D4A33 /* AnyItem.m */; };
+		B68ECF5D19812EDB003D4A33 /* Scarlet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68ECF5B19812EDB003D4A33 /* Scarlet.xcdatamodeld */; };
 		B69CD6701964405C0028F4DC /* VerticalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD66F1964405C0028F4DC /* VerticalListView.xib */; };
 		B69CD672196440DD0028F4DC /* ExpandedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD671196440DD0028F4DC /* ExpandedView.xib */; };
 		B69CD675196441120028F4DC /* ExpandedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69CD674196441120028F4DC /* ExpandedViewController.m */; };
@@ -60,8 +60,6 @@
 		B642FADA179E912C00B7F537 /* ScarletAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScarletAppDelegate.h; sourceTree = "<group>"; };
 		B642FADB179E912C00B7F537 /* ScarletAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScarletAppDelegate.m; sourceTree = "<group>"; };
 		B642FADE179E912D00B7F537 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		B642FAE1179E912D00B7F537 /* Scarlet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scarlet.xcdatamodel; sourceTree = "<group>"; };
-		B642FAE8179FB9C600B7F537 /* Scarlet 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scarlet 2.xcdatamodel"; sourceTree = "<group>"; };
 		B642FAF0179FF96400B7F537 /* libMultiMarkdown.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMultiMarkdown.a; path = ../libMultiMarkdown.a; sourceTree = "<group>"; };
 		B642FAF5179FFA0800B7F537 /* libMultiMarkdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libMultiMarkdown.h; path = ../usr/local/include/libMultiMarkdown.h; sourceTree = "<group>"; };
 		B642FB0417A265C700B7F537 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -88,7 +86,6 @@
 		B681359C19793B32006BBF69 /* EditorTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorTextView.m; sourceTree = "<group>"; };
 		B681359E197966BC006BBF69 /* HTMLWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLWebView.h; sourceTree = "<group>"; };
 		B681359F197966BC006BBF69 /* HTMLWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLWebView.m; sourceTree = "<group>"; };
-		B686279217A3C1D5008A5D3C /* Scarlet 3.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "Scarlet 3.xcdatamodel"; sourceTree = "<group>"; };
 		B686279317A3C2D3008A5D3C /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		B686279417A3C2D3008A5D3C /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
 		B68627A817B37A61008A5D3C /* TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableController.h; sourceTree = "<group>"; };
@@ -102,6 +99,7 @@
 		B68ECF56197EAB4E003D4A33 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		B68ECF58197EAE25003D4A33 /* AnyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyItem.h; sourceTree = "<group>"; };
 		B68ECF59197EAE25003D4A33 /* AnyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnyItem.m; sourceTree = "<group>"; };
+		B68ECF5C19812EDB003D4A33 /* Scarlet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scarlet.xcdatamodel; sourceTree = "<group>"; };
 		B69CD66F1964405C0028F4DC /* VerticalListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerticalListView.xib; sourceTree = "<group>"; };
 		B69CD671196440DD0028F4DC /* ExpandedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandedView.xib; sourceTree = "<group>"; };
 		B69CD673196441120028F4DC /* ExpandedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandedViewController.h; sourceTree = "<group>"; };
@@ -307,7 +305,7 @@
 				B655D6E41972422E0023E422 /* Tag.m */,
 				B68ECF52197E9BDA003D4A33 /* Media.h */,
 				B68ECF53197E9BDA003D4A33 /* Media.m */,
-				B642FAE0179E912D00B7F537 /* Scarlet.xcdatamodeld */,
+				B68ECF5B19812EDB003D4A33 /* Scarlet.xcdatamodeld */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -394,7 +392,6 @@
 				B642FAD5179E912C00B7F537 /* main.m in Sources */,
 				B642FADC179E912C00B7F537 /* ScarletAppDelegate.m in Sources */,
 				B68135A0197966BC006BBF69 /* HTMLWebView.m in Sources */,
-				B642FAE2179E912D00B7F537 /* Scarlet.xcdatamodeld in Sources */,
 				B68ECF5A197EAE25003D4A33 /* AnyItem.m in Sources */,
 				B674B8941963D1FB001D2149 /* VerticalListViewController.m in Sources */,
 				B69CD675196441120028F4DC /* ExpandedViewController.m in Sources */,
@@ -406,6 +403,7 @@
 				B686279517A3C2D3008A5D3C /* Box.m in Sources */,
 				B655D6F11974126E0023E422 /* TagCellView.m in Sources */,
 				B68ECF57197EAB4E003D4A33 /* Entry.m in Sources */,
+				B68ECF5D19812EDB003D4A33 /* Scarlet.xcdatamodeld in Sources */,
 				B68627AA17B37A61008A5D3C /* TableController.m in Sources */,
 				B655D6E51972422E0023E422 /* Tag.m in Sources */,
 				B655D6E8197268370023E422 /* SetToString.m in Sources */,
@@ -565,14 +563,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B642FAE0179E912D00B7F537 /* Scarlet.xcdatamodeld */ = {
+		B68ECF5B19812EDB003D4A33 /* Scarlet.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B642FAE8179FB9C600B7F537 /* Scarlet 2.xcdatamodel */,
-				B686279217A3C1D5008A5D3C /* Scarlet 3.xcdatamodel */,
-				B642FAE1179E912D00B7F537 /* Scarlet.xcdatamodel */,
+				B68ECF5C19812EDB003D4A33 /* Scarlet.xcdatamodel */,
 			);
-			currentVersion = B642FAE1179E912D00B7F537 /* Scarlet.xcdatamodel */;
+			currentVersion = B68ECF5C19812EDB003D4A33 /* Scarlet.xcdatamodel */;
 			path = Scarlet.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

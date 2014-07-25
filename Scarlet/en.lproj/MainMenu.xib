@@ -900,6 +900,18 @@
                                     </items>
                                 </menu>
                             </popUpButtonCell>
+                            <connections>
+                                <binding destination="sjE-GM-GTQ" name="content" keyPath="arrangedObjects" id="10z-eZ-FBA">
+                                    <dictionary key="options">
+                                        <integer key="NSContentPlacementTag" value="1"/>
+                                    </dictionary>
+                                </binding>
+                                <binding destination="sjE-GM-GTQ" name="contentValues" keyPath="arrangedObjects.name" previousBinding="10z-eZ-FBA" id="EiR-JP-Ic6">
+                                    <dictionary key="options">
+                                        <integer key="NSContentPlacementTag" value="1"/>
+                                    </dictionary>
+                                </binding>
+                            </connections>
                         </popUpButton>
                     </toolbarItem>
                 </allowedToolbarItems>
