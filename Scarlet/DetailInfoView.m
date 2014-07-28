@@ -8,6 +8,8 @@
 
 #import "DetailInfoView.h"
 
+#define NSColorFromRGB(rgbValue) [NSColor colorWithSRGBRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 #pragma mark - Category
 
 @implementation NSBezierPath (BezierPathQuartzUtilities)
@@ -82,7 +84,7 @@
     [super drawRect:dirtyRect];
     
     // Drawing code here.
-    [[NSColor whiteColor] setFill];
+    [NSColorFromRGB(0xffffff) setFill];
     NSRectFill(dirtyRect);
 //
 ////    NSShadow *dropShadow = [[NSShadow alloc] init];

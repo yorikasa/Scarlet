@@ -889,14 +889,18 @@
                         <popUpButton key="view" verticalHuggingPriority="750" id="dNt-zK-biM">
                             <rect key="frame" x="0.0" y="14" width="100" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <popUpButtonCell key="cell" type="roundTextured" title="Inbox" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Ra1-At-Xg3" id="yzI-Yc-JJT">
+                            <popUpButtonCell key="cell" type="roundTextured" title="Inbox" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" tag="1" imageScaling="proportionallyDown" inset="2" selectedItem="tGz-la-Xmv" id="yzI-Yc-JJT">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="menu"/>
                                 <menu key="menu" title="OtherViews" id="D7H-4f-CM0">
                                     <items>
-                                        <menuItem title="Inbox" state="on" id="Ra1-At-Xg3"/>
-                                        <menuItem title="Item 2" id="dnX-Yk-ugb"/>
-                                        <menuItem title="Item 3" id="tGz-la-Xmv"/>
+                                        <menuItem title="All" id="Ra1-At-Xg3">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="WCc-lv-Qo5"/>
+                                        <menuItem title="Inbox" state="on" tag="1" id="tGz-la-Xmv">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </popUpButtonCell>

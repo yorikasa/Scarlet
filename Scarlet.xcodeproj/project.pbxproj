@@ -37,6 +37,9 @@
 		B68ECF57197EAB4E003D4A33 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B68ECF56197EAB4E003D4A33 /* Entry.m */; };
 		B68ECF5A197EAE25003D4A33 /* AnyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B68ECF59197EAE25003D4A33 /* AnyItem.m */; };
 		B68ECF5D19812EDB003D4A33 /* Scarlet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68ECF5B19812EDB003D4A33 /* Scarlet.xcdatamodeld */; };
+		B68ECF67198493B8003D4A33 /* Edit-Button-Alternate.png in Resources */ = {isa = PBXBuildFile; fileRef = B68ECF65198493B8003D4A33 /* Edit-Button-Alternate.png */; };
+		B68ECF68198493B8003D4A33 /* Edit-Button-Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = B68ECF66198493B8003D4A33 /* Edit-Button-Normal.png */; };
+		B68ECF6C19869152003D4A33 /* Tag.png in Resources */ = {isa = PBXBuildFile; fileRef = B68ECF6B19869152003D4A33 /* Tag.png */; };
 		B69CD6701964405C0028F4DC /* VerticalListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD66F1964405C0028F4DC /* VerticalListView.xib */; };
 		B69CD672196440DD0028F4DC /* ExpandedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69CD671196440DD0028F4DC /* ExpandedView.xib */; };
 		B69CD675196441120028F4DC /* ExpandedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69CD674196441120028F4DC /* ExpandedViewController.m */; };
@@ -100,6 +103,9 @@
 		B68ECF58197EAE25003D4A33 /* AnyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyItem.h; sourceTree = "<group>"; };
 		B68ECF59197EAE25003D4A33 /* AnyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnyItem.m; sourceTree = "<group>"; };
 		B68ECF5C19812EDB003D4A33 /* Scarlet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scarlet.xcdatamodel; sourceTree = "<group>"; };
+		B68ECF65198493B8003D4A33 /* Edit-Button-Alternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Edit-Button-Alternate.png"; path = "images/Edit-Button-Alternate.png"; sourceTree = SOURCE_ROOT; };
+		B68ECF66198493B8003D4A33 /* Edit-Button-Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Edit-Button-Normal.png"; path = "images/Edit-Button-Normal.png"; sourceTree = SOURCE_ROOT; };
+		B68ECF6B19869152003D4A33 /* Tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tag.png; path = images/Tag.png; sourceTree = SOURCE_ROOT; };
 		B69CD66F1964405C0028F4DC /* VerticalListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerticalListView.xib; sourceTree = "<group>"; };
 		B69CD671196440DD0028F4DC /* ExpandedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandedView.xib; sourceTree = "<group>"; };
 		B69CD673196441120028F4DC /* ExpandedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandedViewController.h; sourceTree = "<group>"; };
@@ -280,6 +286,9 @@
 		B68A7B301974B1D300047460 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B68ECF6B19869152003D4A33 /* Tag.png */,
+				B68ECF65198493B8003D4A33 /* Edit-Button-Alternate.png */,
+				B68ECF66198493B8003D4A33 /* Edit-Button-Normal.png */,
 				B68A7B331974B65C00047460 /* check.png */,
 			);
 			name = Images;
@@ -372,11 +381,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B69CD6701964405C0028F4DC /* VerticalListView.xib in Resources */,
+				B68ECF68198493B8003D4A33 /* Edit-Button-Normal.png in Resources */,
+				B68ECF67198493B8003D4A33 /* Edit-Button-Alternate.png in Resources */,
 				B642FAD3179E912C00B7F537 /* InfoPlist.strings in Resources */,
 				B68A7B341974B65C00047460 /* check.png in Resources */,
 				B642FAD9179E912C00B7F537 /* Credits.rtf in Resources */,
 				B69CD672196440DD0028F4DC /* ExpandedView.xib in Resources */,
 				B642FADF179E912D00B7F537 /* MainMenu.xib in Resources */,
+				B68ECF6C19869152003D4A33 /* Tag.png in Resources */,
 				B681359719762FE5006BBF69 /* Preference.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

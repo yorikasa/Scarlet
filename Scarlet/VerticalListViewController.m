@@ -17,6 +17,8 @@
 #import "TagTableViewController.h"
 #import "PreferenceWindowController.h"
 
+#define NSColorFromRGB(rgbValue) [NSColor colorWithSRGBRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface VerticalListViewController ()
 
 @end
@@ -61,6 +63,10 @@ int gIsEditing = 0;
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(reloadTextView:) name:NotificationEditorFontChanged object:nil];
         [nc addObserver:self selector:@selector(keepFont:) name:NSTextDidChangeNotification object:_editorTextView];
+
+        // Visual Tweak
+//        [[_editButton cell] setBackgroundColor:NSColorFromRGB(0xf5f5f5)];
+//        [[_editButton cell] setHighlightsBy:NSChangeGrayCellMask];
     }
     return self;
 }
