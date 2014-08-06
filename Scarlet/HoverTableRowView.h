@@ -10,4 +10,5 @@
 
 @interface HoverTableRowView : NSTableRowView
 
+
 @end

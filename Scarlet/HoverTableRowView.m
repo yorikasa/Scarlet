@@ -35,14 +35,20 @@
 // Only called if the 'selected' property is yes.
 - (void)drawSelectionInRect:(NSRect)dirtyRect {
     // Check the selectionHighlightStyle, in case it was set to None
-    if (self.selectionHighlightStyle != NSTableViewSelectionHighlightStyleNone) {
-        NSGradient *gradient = [[NSGradient alloc] initWithColorsAndLocations:
+    if ([self isEmphasized]) {
+        if (self.selectionHighlightStyle != NSTableViewSelectionHighlightStyleNone) {
+            NSGradient *gradient = [[NSGradient alloc] initWithColorsAndLocations:
                                     NSColorFromRGB(0xececec), 0.0,
                                     NSColorFromRGB(0xf5f5f5), 0.15,
                                     NSColorFromRGB(0xf5f5f5), 0.85,
                                     NSColorFromRGB(0xececec), 1.0, nil];
-        [gradient drawInRect:[self bounds] angle:270];
+            [gradient drawInRect:[self bounds] angle:270];
+        }
+    }else{
+        [NSColorFromRGB(0xf5f5f5) setFill];
+        NSRectFill([self bounds]);
     }
+    // [super drawSelectionInRect:dirtyRect];
 }
 
 - (NSBackgroundStyle)interiorBackgroundStyle {

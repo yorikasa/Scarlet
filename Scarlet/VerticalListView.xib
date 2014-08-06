@@ -39,14 +39,14 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="52" horizontalPageScroll="10" verticalLineScroll="52" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sl-cg-iAE">
-                                    <rect key="frame" x="0.0" y="0.0" width="368" height="676"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="368" height="651"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <clipView key="contentView" id="Alq-c2-spC">
-                                        <rect key="frame" x="0.0" y="0.0" width="368" height="676"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="651"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" autosaveColumns="NO" rowHeight="50" viewBased="YES" id="S12-tt-K2O">
-                                                <rect key="frame" x="0.0" y="0.0" width="368" height="676"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="368" height="651"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <size key="intercellSpacing" width="3" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,11 +135,78 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="Bxb-zQ-oV4" customClass="DetailInfoView">
+                                    <rect key="frame" x="0.0" y="651" width="368" height="25"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <subviews>
+                                        <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="cQN-bP-kgA">
+                                            <rect key="frame" x="2" y="0.0" width="100" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="MsD-gQ-u4s"/>
+                                            </constraints>
+                                            <popUpButtonCell key="cell" type="bevel" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" selectedItem="vQ1-Hm-WfR" id="HpU-Bz-vzo">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <menu key="menu" title="OtherViews" id="RmE-8B-UYi">
+                                                    <items>
+                                                        <menuItem title="Item 1" state="on" id="vQ1-Hm-WfR"/>
+                                                        <menuItem title="Item 2" id="K5T-TP-TVH"/>
+                                                        <menuItem title="Item 3" id="Qph-PU-lat"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="a5Q-L2-FMq" name="content" keyPath="arrangedObjects" id="trR-0A-xgw"/>
+                                                <binding destination="a5Q-L2-FMq" name="contentValues" keyPath="arrangedObjects.name" previousBinding="trR-0A-xgw" id="rwN-Z0-j4p"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="2TZ-wy-KGh">
+                                            <rect key="frame" x="0.0" y="0.0" width="368" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView">
+                                                <rect key="frame" x="1" y="1" width="366" height="0.0"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="YTs-Hh-Mtz"/>
+                                            </constraints>
+                                            <color key="borderColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </box>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="lMj-3J-C1V">
+                                            <rect key="frame" x="343" y="2" width="20" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="D9q-UH-6Su"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" controlSize="small" imageScaling="proportionallyDown" inset="2" id="jhz-x2-nac">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2TZ-wy-KGh" firstAttribute="top" secondItem="lMj-3J-C1V" secondAttribute="bottom" constant="1" id="Fs0-Q1-leN"/>
+                                        <constraint firstAttribute="trailing" secondItem="2TZ-wy-KGh" secondAttribute="trailing" id="HC0-x4-2wI"/>
+                                        <constraint firstItem="lMj-3J-C1V" firstAttribute="top" secondItem="Bxb-zQ-oV4" secondAttribute="top" constant="5" id="PjX-Mg-4F7"/>
+                                        <constraint firstAttribute="bottom" secondItem="2TZ-wy-KGh" secondAttribute="bottom" id="RCb-6X-CZg"/>
+                                        <constraint firstAttribute="bottom" secondItem="cQN-bP-kgA" secondAttribute="bottom" id="YTH-Vx-ydC"/>
+                                        <constraint firstItem="cQN-bP-kgA" firstAttribute="leading" secondItem="Bxb-zQ-oV4" secondAttribute="leading" constant="2" id="bqi-pN-bGC"/>
+                                        <constraint firstItem="cQN-bP-kgA" firstAttribute="top" secondItem="Bxb-zQ-oV4" secondAttribute="top" id="dDm-iw-ViG"/>
+                                        <constraint firstAttribute="trailing" secondItem="lMj-3J-C1V" secondAttribute="trailing" constant="5" id="pxh-0P-IUo"/>
+                                        <constraint firstItem="2TZ-wy-KGh" firstAttribute="leading" secondItem="Bxb-zQ-oV4" secondAttribute="leading" id="tAc-hc-IfU"/>
+                                    </constraints>
+                                </customView>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="4Sl-cg-iAE" secondAttribute="bottom" id="3l9-nf-lka"/>
-                                <constraint firstItem="4Sl-cg-iAE" firstAttribute="top" secondItem="1pS-ux-t4Y" secondAttribute="top" id="5Wf-Q6-7yG"/>
+                                <constraint firstItem="4Sl-cg-iAE" firstAttribute="top" secondItem="1pS-ux-t4Y" secondAttribute="top" constant="25" id="5Wf-Q6-7yG"/>
                                 <constraint firstItem="4Sl-cg-iAE" firstAttribute="leading" secondItem="1pS-ux-t4Y" secondAttribute="leading" id="FBp-1X-jPe"/>
+                                <constraint firstItem="4Sl-cg-iAE" firstAttribute="top" secondItem="Bxb-zQ-oV4" secondAttribute="bottom" id="OhT-tx-t1G"/>
+                                <constraint firstItem="Bxb-zQ-oV4" firstAttribute="leading" secondItem="1pS-ux-t4Y" secondAttribute="leading" id="Zk9-lF-i8H"/>
+                                <constraint firstItem="Bxb-zQ-oV4" firstAttribute="top" secondItem="1pS-ux-t4Y" secondAttribute="top" id="eDv-Ls-P1R"/>
+                                <constraint firstAttribute="trailing" secondItem="Bxb-zQ-oV4" secondAttribute="trailing" id="mnm-zs-ARS"/>
                                 <constraint firstAttribute="trailing" secondItem="4Sl-cg-iAE" secondAttribute="trailing" id="ud2-ke-hOD"/>
                             </constraints>
                         </customView>
@@ -285,8 +352,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="lew-N0-HVv"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="roundTextured" title="Tags" bezelStyle="texturedRounded" image="Tag" imagePosition="only" controlSize="small" borderStyle="border" inset="2" id="CfT-cN-Mgo">
-                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <buttonCell key="cell" type="roundTextured" title="Tags" bezelStyle="texturedRounded" image="Tag" imagePosition="only" controlSize="small" inset="2" id="CfT-cN-Mgo">
+                                                <behavior key="behavior" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
                                             <connections>
@@ -656,6 +723,7 @@ DQ
         <image name="Edit-Button-Alternate" width="45" height="69"/>
         <image name="Edit-Button-Normal" width="45" height="69"/>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSAddTemplate" width="8" height="8"/>
         <image name="Tag" width="20" height="15"/>
         <image name="check" width="24" height="14"/>
     </resources>
