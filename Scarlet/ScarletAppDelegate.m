@@ -42,6 +42,14 @@
     [_contentView addConstraints:ch];
 
     [self prepareSort];
+
+    // Sidebar something
+    if ([_splitView isSubviewCollapsed:[_splitView subviews][0]]) {
+        [_toggleSidebarButton setState:NO];
+    }else{
+        [_toggleSidebarButton setState:YES];
+        [self swapButtonImages:_toggleSidebarButton];
+    }
 }
 
 + (void)initialize{
@@ -234,6 +242,10 @@
     return YES;
 }
 
+- (BOOL)splitView:(NSSplitView *)splitView shouldHideDividerAtIndex:(NSInteger)dividerIndex{
+    return YES;
+}
+
 #pragma mark - Outline View Delegate
 
 - (id)outlineView:(NSOutlineView *)ov viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item{
@@ -411,6 +423,19 @@
     [[_verticalListViewController entryArrayController] setFilterPredicate:predicate];
 }
 
+- (IBAction)toggleSidebar:(id)sender {
+    [self swapButtonImages:sender];
+
+    if ([sender state] == NSOnState) {
+        //[self expandSidebar];
+        [_sourceView setHidden:NO];
+    }else{
+        //[self collapseSidebar];
+        [_sourceView setHidden:YES];
+    }
+    [_splitView adjustSubviews];
+}
+
 #pragma mark - Menu bar
 
 - (IBAction)menuBarNew:(id)sender {
@@ -447,8 +472,25 @@
     }
 }
 
+-(void)swapButtonImages: (id)sender{
+    NSImage *tmpImage = [sender image];
+    [sender setImage:[sender alternateImage]];
+    [sender setAlternateImage:tmpImage];
+}
 
+- (void)collapseSidebar{
+//    NSView *left  = [_splitView subviews][0];
+//    NSView *right = [_splitView subviews][1];
+//    NSRect rightFrame = [right frame];
+//    NSRect overallFrame = [_splitView frame]; //???
+//    [left setHidden:YES];
+//    [right setFrameSize:NSMakeSize(overallFrame.size.width, rightFrame.size.height)];
+//    [_splitView display];
+}
 
+- (void)expandSidebar{
+
+}
 
 
 

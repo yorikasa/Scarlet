@@ -712,7 +712,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="901" height="560"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <customView identifier="sourceView" id="zK5-4o-Ft2">
+                            <customView identifier="sourceView" id="zK5-4o-Ft2" userLabel="Source View">
                                 <rect key="frame" x="0.0" y="0.0" width="219" height="560"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
@@ -812,7 +812,7 @@
                                     <constraint firstAttribute="trailing" secondItem="FqH-MJ-Vre" secondAttribute="trailing" id="jWE-kk-JUi"/>
                                 </constraints>
                             </customView>
-                            <customView id="7ct-sq-YuR">
+                            <customView id="7ct-sq-YuR" userLabel="Content View">
                                 <rect key="frame" x="220" y="0.0" width="681" height="560"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
@@ -860,18 +860,41 @@
                             </buttonCell>
                         </button>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="5C4E27D9-4C8F-4597-8468-8FF9D7AC21AF" label="Sidebar" paletteLabel="Sidebar" id="1rs-nc-pTZ">
+                    <toolbarItem implicitItemIdentifier="5C4E27D9-4C8F-4597-8468-8FF9D7AC21AF" label="Sidebar" paletteLabel="Sidebar" image="sidebar" id="1rs-nc-pTZ">
                         <nil key="toolTip"/>
                         <size key="minSize" width="30" height="28"/>
-                        <size key="maxSize" width="30" height="28"/>
+                        <size key="maxSize" width="30" height="31"/>
                         <button key="view" verticalHuggingPriority="750" id="JcL-1Z-vWz">
                             <rect key="frame" x="9" y="14" width="30" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="roundTextured" title="＜" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h1I-xD-aeF">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="sidebar" imagePosition="overlaps" alignment="center" alternateImage="sidebar-alternate" borderStyle="border" inset="2" id="h1I-xD-aeF">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="toggleSidebar:" target="494" id="4XY-vM-Dj6"/>
+                            </connections>
                         </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="DF18FE33-4100-4C98-9563-CBBE79D4F812" label="View" paletteLabel="View" id="ikO-Lg-iIT">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="67" height="25"/>
+                        <size key="maxSize" width="67" height="28"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="pcb-zm-M5j">
+                            <rect key="frame" x="0.0" y="14" width="67" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" alignment="left" style="texturedSquare" trackingMode="selectOne" id="8De-du-97L">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment image="NSListViewTemplate" width="32" selected="YES">
+                                        <nil key="label"/>
+                                    </segment>
+                                    <segment image="NSIconViewTemplate" width="32" tag="1">
+                                        <nil key="label"/>
+                                    </segment>
+                                </segments>
+                            </segmentedCell>
+                        </segmentedControl>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="15204F8A-0C9C-4C4B-9B48-CFA13BAABDB7" label="Search" paletteLabel="Search" id="922">
                         <nil key="toolTip"/>
@@ -896,6 +919,10 @@
                 <defaultToolbarItems>
                     <toolbarItem reference="1rs-nc-pTZ"/>
                     <toolbarItem reference="798"/>
+                    <toolbarItem reference="ikO-Lg-iIT"/>
+                    <toolbarItem reference="798"/>
+                    <toolbarItem reference="798"/>
+                    <toolbarItem reference="798"/>
                     <toolbarItem reference="922"/>
                 </defaultToolbarItems>
             </toolbar>
@@ -910,7 +937,9 @@
                 <outlet property="menuSortByTitle" destination="1465" id="N4G-Yv-zvt"/>
                 <outlet property="menuSortDescending" destination="1472" id="XSx-J5-90P"/>
                 <outlet property="searchField" destination="920" id="xgk-e7-uKg"/>
+                <outlet property="sourceView" destination="zK5-4o-Ft2" id="tdt-E2-8wR"/>
                 <outlet property="splitView" destination="J9d-4X-MYR" id="Bqt-iu-tZD"/>
+                <outlet property="toggleSidebarButton" destination="JcL-1Z-vWz" id="T3R-HQ-nTl"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
@@ -924,5 +953,9 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSIconViewTemplate" width="11" height="10"/>
+        <image name="NSListViewTemplate" width="11" height="10"/>
+        <image name="sidebar" width="16" height="16"/>
+        <image name="sidebar-alternate" width="16" height="16"/>
     </resources>
 </document>

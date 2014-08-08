@@ -23,6 +23,8 @@
 		B655D6EB19728C5F0023E422 /* DetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6EA19728C5F0023E422 /* DetailInfoView.m */; };
 		B655D6F11974126E0023E422 /* TagCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6F01974126E0023E422 /* TagCellView.m */; };
 		B655D6F4197414550023E422 /* TagTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B655D6F3197414550023E422 /* TagTableViewController.m */; };
+		B6689B071994A5FA006CF665 /* sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = B6689B061994A5FA006CF665 /* sidebar.png */; };
+		B6689B091994A896006CF665 /* sidebar-alternate.png in Resources */ = {isa = PBXBuildFile; fileRef = B6689B081994A896006CF665 /* sidebar-alternate.png */; };
 		B674B8941963D1FB001D2149 /* VerticalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B674B8921963D1FB001D2149 /* VerticalListViewController.m */; };
 		B681359619762FE5006BBF69 /* PreferenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B681359419762FE5006BBF69 /* PreferenceWindowController.m */; };
 		B681359719762FE5006BBF69 /* Preference.xib in Resources */ = {isa = PBXBuildFile; fileRef = B681359519762FE5006BBF69 /* Preference.xib */; };
@@ -78,6 +80,8 @@
 		B655D6F01974126E0023E422 /* TagCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagCellView.m; sourceTree = "<group>"; };
 		B655D6F2197414550023E422 /* TagTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableViewController.h; sourceTree = "<group>"; };
 		B655D6F3197414550023E422 /* TagTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableViewController.m; sourceTree = "<group>"; };
+		B6689B061994A5FA006CF665 /* sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sidebar.png; path = images/sidebar.png; sourceTree = SOURCE_ROOT; };
+		B6689B081994A896006CF665 /* sidebar-alternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sidebar-alternate.png"; path = "images/sidebar-alternate.png"; sourceTree = SOURCE_ROOT; };
 		B674B8911963D1FB001D2149 /* VerticalListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalListViewController.h; sourceTree = "<group>"; };
 		B674B8921963D1FB001D2149 /* VerticalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalListViewController.m; sourceTree = "<group>"; };
 		B681359319762FE5006BBF69 /* PreferenceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceWindowController.h; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 		B68A7B301974B1D300047460 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B6689B061994A5FA006CF665 /* sidebar.png */,
+				B6689B081994A896006CF665 /* sidebar-alternate.png */,
 				B68ECF6B19869152003D4A33 /* Tag.png */,
 				B68ECF65198493B8003D4A33 /* Edit-Button-Alternate.png */,
 				B68ECF66198493B8003D4A33 /* Edit-Button-Normal.png */,
@@ -387,9 +393,11 @@
 				B68A7B341974B65C00047460 /* check.png in Resources */,
 				B642FAD9179E912C00B7F537 /* Credits.rtf in Resources */,
 				B69CD672196440DD0028F4DC /* ExpandedView.xib in Resources */,
+				B6689B071994A5FA006CF665 /* sidebar.png in Resources */,
 				B642FADF179E912D00B7F537 /* MainMenu.xib in Resources */,
 				B68ECF6C19869152003D4A33 /* Tag.png in Resources */,
 				B681359719762FE5006BBF69 /* Preference.xib in Resources */,
+				B6689B091994A896006CF665 /* sidebar-alternate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

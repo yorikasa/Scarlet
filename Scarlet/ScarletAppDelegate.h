@@ -37,10 +37,13 @@
 @property (weak) IBOutlet NSView *blankView;
 @property (weak) IBOutlet NSView *contentView;
 @property (weak) IBOutlet NSSearchField *searchField;
+@property (weak) IBOutlet NSButton *toggleSidebarButton;
+@property (weak) IBOutlet NSView *sourceView;
 
 #pragma mark - Actions
 - (IBAction)addOrRemoveEntry:(id)sender;
 - (IBAction)search:(id)sender;
+- (IBAction)toggleSidebar:(id)sender;
 
 #pragma mark - Menu Bar Actions
 - (IBAction)menuBarNew:(id)sender;
